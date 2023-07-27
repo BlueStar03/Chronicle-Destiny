@@ -4,7 +4,7 @@
   "name": "Main",
   "option_author": "",
   "option_collision_compatibility": false,
-  "option_copy_on_write_enabled": false,
+  "option_copy_on_write_enabled": true,
   "option_draw_colour": 4294967295,
   "option_game_speed": 60,
   "option_gameguid": "a76d8489-23ab-438f-ad16-f496de1ed7c0",
