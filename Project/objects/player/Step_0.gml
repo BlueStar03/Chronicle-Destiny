@@ -21,3 +21,6 @@ if place_meeting(x,y+vspd,wall){
 
 x+=hspd;
 y+=vspd;
+
+dbug.trace.add(x)
+dbug.trace.add(y)

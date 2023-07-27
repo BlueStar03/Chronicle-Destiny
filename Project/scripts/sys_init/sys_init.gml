@@ -5,6 +5,10 @@ _display=new Display();
 _camera=new Camera();
 
 
+#macro dbug global._dbug
+_dbug=new Dbug();
+
+
 
 
 gpu_set_ztestenable(true);
