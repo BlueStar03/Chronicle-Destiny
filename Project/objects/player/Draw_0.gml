@@ -1,2 +1,2 @@
 /// @description 
-dbug.draw();
+spr.draw(x,y,z);

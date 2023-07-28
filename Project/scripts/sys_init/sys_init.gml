@@ -16,6 +16,7 @@ gpu_set_zwriteenable(true);
 gpu_set_alphatestenable(true);
 
 gpu_set_texrepeat(true)
+application_surface_draw_enable(false);
 
 
 

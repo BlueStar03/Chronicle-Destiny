@@ -22,5 +22,9 @@ if place_meeting(x,y+vspd,wall){
 x+=hspd;
 y+=vspd;
 
-dbug.trace.add(x)
-dbug.trace.add(y)
+spr.step(dir);
+
+
+
+display.ax+=keyboard_check(vk_numpad4)-keyboard_check(vk_numpad6)
+display.ay+=keyboard_check(vk_numpad8)-keyboard_check(vk_numpad2)

@@ -8,16 +8,11 @@ function Dbug() constructor{
 		
 		add:function(label,data=""){
 			if on{
-					var _l=string(label);
-
-					var _d=data==""?"":"|"+string(data);
-					//_d+=trace?" :"+string(_o):"";
-					line[index]=_l+_d;
-					index++;
-				}
-		},
-		step:function(){
-			
+				var _l=string(label);
+				var _d=data==""?"":"|"+string(data);
+				line[index]=_l+_d;
+				index++;
+			}
 		},
 		draw:function(){
 			if on{
@@ -28,10 +23,9 @@ function Dbug() constructor{
 				index=0;
 				draw_text_outline(1,1,_s);
 			}
-		},		
+		},
 	}
 	step=function(){
-		trace.step();	
 	}
 	draw=function(){
 		trace.draw();
