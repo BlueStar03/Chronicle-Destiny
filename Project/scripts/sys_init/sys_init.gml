@@ -1,3 +1,5 @@
+#macro c_cornflower $ed9564	
+
 #macro display global._display
 _display=new Display();
 

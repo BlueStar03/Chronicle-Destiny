@@ -17,7 +17,7 @@ function Camera()constructor{
 	}
 	polar={
 		angle:90,
-		inclination:35.264,
+		inclination:45,//35.264,
 		distance:128,
 	}
 	step=function(){
@@ -44,11 +44,13 @@ function Camera()constructor{
 	}
 	draw=function(){
 		var cam = camera_get_active();
-		projmat= matrix_build_projection_perspective_fov(60, window_get_width() / window_get_height(), 1, 32000)
-		projmatortho= matrix_build_projection_ortho( display.width , display.height, -128, 32000)
+		projmat= matrix_build_projection_perspective_fov(60, window_get_width() / window_get_height(), 1, 320000)
+		projmatortho= matrix_build_projection_ortho( display.width , display.height, -128, 320000)
+		var p=os_browser!=browser_not_a_browser?projmat:projmatortho;
+		
 		
 		camera_set_view_mat(cam, matrix_build_lookat(from.x, from.y, -from.z, to.x, to.y, -to.z, up.x, up.y, up.z));
-		camera_set_proj_mat(cam,projmatortho);
+		camera_set_proj_mat(cam,p);
 		camera_apply(cam);
 	}
 

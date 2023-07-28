@@ -2,8 +2,8 @@ function Display() constructor{
 	width=640;
 	height=360;
 	scale=1;
-	ax=-(width/2)*scale;
-	ay=-(height/2)*scale;
+	ax=os_browser!=browser_not_a_browser?0:-(width/2)*scale;
+	ay=os_browser!=browser_not_a_browser?0:-(height/2)*scale;
 	init=function(){
 		display_set_gui_size(width,height);
 		surface_resize(application_surface,width*2,height*2)

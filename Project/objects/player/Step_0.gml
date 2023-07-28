@@ -24,7 +24,7 @@ y+=vspd;
 
 spr.step(dir);
 
-
+camera.polar.angle+=keyboard_check(ord("Q"))-keyboard_check(ord("E"))
 
 display.ax+=keyboard_check(vk_numpad4)-keyboard_check(vk_numpad6)
 display.ay+=keyboard_check(vk_numpad8)-keyboard_check(vk_numpad2)
