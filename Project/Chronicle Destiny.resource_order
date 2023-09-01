@@ -1,6 +1,23 @@
 {
-  "FolderOrderSettings": [],
+  "FolderOrderSettings": [
+    {"name":"assets","order":18,"path":"folders/assets.yy",},
+    {"name":"code","order":17,"path":"folders/code.yy",},
+    {"name":"room","order":19,"path":"folders/room.yy",},
+  ],
   "ResourceOrderSettings": [
-    {"name":"rm_test","order":11,"path":"rooms/rm_test/rm_test.yy",},
+    {"name":"Sprite4","order":4,"path":"sprites/Sprite4/Sprite4.yy",},
+    {"name":"tl_grid","order":1,"path":"sprites/tl_grid/tl_grid.yy",},
+    {"name":"ts_grid","order":2,"path":"tilesets/ts_grid/ts_grid.yy",},
+    {"name":"spr_wall","order":3,"path":"sprites/spr_wall/spr_wall.yy",},
+    {"name":"sys_dbug","order":9,"path":"scripts/sys_dbug/sys_dbug.yy",},
+    {"name":"tilemap_to_vertex_buffer","order":10,"path":"scripts/tilemap_to_vertex_buffer/tilemap_to_vertex_buffer.yy",},
+    {"name":"sys_helper","order":6,"path":"scripts/sys_helper/sys_helper.yy",},
+    {"name":"player","order":3,"path":"objects/player/player.yy",},
+    {"name":"sys_3d","order":7,"path":"scripts/sys_3d/sys_3d.yy",},
+    {"name":"wall","order":4,"path":"objects/wall/wall.yy",},
+    {"name":"front","order":1,"path":"objects/front/front.yy",},
+    {"name":"sys_camera","order":5,"path":"scripts/sys_camera/sys_camera.yy",},
+    {"name":"back","order":2,"path":"objects/back/back.yy",},
+    {"name":"load_obj","order":8,"path":"scripts/load_obj/load_obj.yy",},
   ],
 }
