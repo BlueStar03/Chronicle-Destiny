@@ -1,4 +1,4 @@
-function tilemap_to_vertex_buffer(layer_name){
+function tilemap_to_vertex_buffer(layer_name){	
 	var tilelayer = layer_get_id(layer_name);
 	var tm_depth = layer_get_depth(tilelayer);
 	var tilemap = layer_tilemap_get_id(tilelayer);
@@ -88,20 +88,20 @@ for(var i=0;i<tm_width;i++){
 		var p4u =	uv_left					;
 		var p4v =	 uv_bottom				;
 		
-		//if ((i % 2 == 0 && j % 2 == 0) || (i % 2 > 0 && j % 2 > 0)) {
-    //        var color = c_white;
-    //    } else {
-    //        var color = c_ltgrey;
-    //    }
+		if ((i % 2 == 0 && j % 2 == 0) || (i % 2 > 0 && j % 2 > 0)) {
+            var color = c_white;
+        } else {
+            var color = c_white;
+        }
 		
 	
-		vertex_point_add(vbuff,p1x,p1y,tm_depth, 0,0,1,p1u,p1v);
-		vertex_point_add(vbuff,p2x,p2y,tm_depth, 0,0,1,p2u,p2v);
-		vertex_point_add(vbuff,p3x,p3y,tm_depth, 0,0,1,p3u,p3v);
+		vertex_point_add(vbuff,p1x,p1y,tm_depth, 0,0,1,p1u,p1v,color);
+		vertex_point_add(vbuff,p2x,p2y,tm_depth, 0,0,1,p2u,p2v,color);
+		vertex_point_add(vbuff,p3x,p3y,tm_depth, 0,0,1,p3u,p3v,color);
 
-		vertex_point_add(vbuff,p3x,p3y,tm_depth, 0,0,1,p3u,p3v);
-		vertex_point_add(vbuff,p4x,p4y,tm_depth, 0,0,1,p4u,p4v);
-		vertex_point_add(vbuff,p1x,p1y,tm_depth, 0,0,1,p1u,p1v);
+		vertex_point_add(vbuff,p3x,p3y,tm_depth, 0,0,1,p3u,p3v,color);
+		vertex_point_add(vbuff,p4x,p4y,tm_depth, 0,0,1,p4u,p4v,color);
+		vertex_point_add(vbuff,p1x,p1y,tm_depth, 0,0,1,p1u,p1v,color);
 	}
 }
 
@@ -111,3 +111,4 @@ vertex_freeze(vbuff);
 layer_set_visible(tilelayer,false)
 return vbuff
 }
+

@@ -56,25 +56,3 @@ function rollover(value, lo, hi) {
 	value+=lo
 	return value
 }
-
-///@function is_odd(value)
-///@description true if it is odd, false if eaven
-///@param value
-function is_odd(value) {
-	var odd = value mod 2
-	return odd
-}
-
-function getIsoProMat(w,h,n,f){
-	var _ar=w/h;	
-	var _scale=1/tan(pi/6);
-	var _depth=f/(f-n);
-	
-	mat=[ _scale/_ar,_scale,0,0,
-	0,_scale,0,0,
-	0,0,_depth,-n*_depth,
-	0,0,0,1
-	]
-	return mat
-	
-}
