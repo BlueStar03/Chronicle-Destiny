@@ -1,5 +1,5 @@
 /// @description 
-
+sprite=new Sprite(spr_test_stand);
 
 key_left=ord("A");
 key_right=ord("D");
