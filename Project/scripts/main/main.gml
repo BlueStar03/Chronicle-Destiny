@@ -4,3 +4,6 @@
 #macro camera global._camera
 _camera=new Camera();
 
+#macro dbug global._dbug
+_dbug=new Dbug();
+

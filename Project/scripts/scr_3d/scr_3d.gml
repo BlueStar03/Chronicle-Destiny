@@ -3,7 +3,8 @@ gpu_set_zwriteenable(true);
 gpu_set_alphatestenable(true);
 
 gpu_set_texrepeat(true);
-gpu_set_cullmode(cull_noculling)
+gpu_set_cullmode(cull_noculling);
+
 
 #macro v_format global._vertex_format
 vertex_format_begin();
@@ -31,6 +32,8 @@ function vertex_point_add(buffer, xx, yy, zz, nx, ny, nz, uu, vv, col=c_white, a
 	vertex_texcoord(buffer,uu,vv);
 	vertex_color(buffer,col,a);
 }
+
+
 
 ///@fuction draw_3d_model(model,texture,xx,yy,zz,rx=0,ry=0,rz=0,sx=1,sy=1,sz=1)
 ///@description Draws a model
@@ -66,7 +69,7 @@ function model_block(x1,y1,z1,x2,y2,z2,hrepeat=1,vrepeat=1,zrepeat=1) {
 	vertex_point_add(vb,	x2,y2,z1,	0,0,-1,	hrepeat,vrepeat);
 	vertex_point_add(vb,	x2,y1,z1,	0,0,-1,	hrepeat,0);
 	vertex_point_add(vb,	x1,y1,z1,	0,0,-1,	0,0);
-	//top								
+	////top								
 	vertex_point_add(vb,	x1,y1,z2,	0,0,1,	0,0);
 	vertex_point_add(vb,	x2,y1,z2,	0,0,1,	hrepeat,0);
 	vertex_point_add(vb,	x2,y2,z2,	0,0,1,	hrepeat,vrepeat);
@@ -108,5 +111,6 @@ function model_block(x1,y1,z1,x2,y2,z2,hrepeat=1,vrepeat=1,zrepeat=1) {
 	vertex_point_add(vb,	x1,y1,z1,	-1,0,0,	0,0);
 
 	vertex_end(vb);
+	vertex_freeze(vb);
 	return vb;
 }

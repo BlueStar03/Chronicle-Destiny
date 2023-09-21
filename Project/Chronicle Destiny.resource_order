@@ -15,6 +15,7 @@
     {"name":"spr_wall","order":5,"path":"sprites/spr_wall/spr_wall.yy",},
     {"name":"tl_grid","order":6,"path":"sprites/tl_grid/tl_grid.yy",},
     {"name":"obj_title","order":3,"path":"objects/obj_title/obj_title.yy",},
+    {"name":"sys_dbug","order":7,"path":"scripts/sys_dbug/sys_dbug.yy",},
     {"name":"rm_test","order":4,"path":"rooms/rm_test/rm_test.yy",},
     {"name":"fnt_title","order":3,"path":"fonts/fnt_title/fnt_title.yy",},
     {"name":"tilemap_to_vertex_buffer","order":5,"path":"scripts/tilemap_to_vertex_buffer/tilemap_to_vertex_buffer.yy",},

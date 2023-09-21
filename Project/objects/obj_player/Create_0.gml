@@ -9,6 +9,7 @@ key_down=ord("S");
 z=0;
 
 camera.focus=self;
+camera.mode="orbit";
 
 hspd=0
 vspd=0
