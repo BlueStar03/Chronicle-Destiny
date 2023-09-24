@@ -30,7 +30,7 @@ function Camera() constructor{
 	
 	step=function(){
 		if mode=="orbit"{
-			rollover(orbit.dir,0,360);
+			orbit.dir=rollover(orbit.dir,0,360);
 			if instance_exists(focus){
 				to.x=focus.x;
 				to.y=focus.y;

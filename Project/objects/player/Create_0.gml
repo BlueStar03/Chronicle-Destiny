@@ -1,6 +1,9 @@
 /// @description 
 sprite=new Sprite(spr_test_stand);
 
+dir=0
+spd=0
+
 key_left=ord("A");
 key_right=ord("D");
 key_up=ord("W");

@@ -11,6 +11,7 @@
     {"name":"wall","order":2,"path":"objects/wall/wall.yy",},
     {"name":"rm_title","order":2,"path":"rooms/rm_title/rm_title.yy",},
     {"name":"player","order":1,"path":"objects/player/player.yy",},
+    {"name":"spr_test","order":9,"path":"sprites/spr_test/spr_test.yy",},
     {"name":"spr_player","order":4,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"sys_helper","order":3,"path":"scripts/sys_helper/sys_helper.yy",},
     {"name":"spr_wall","order":5,"path":"sprites/spr_wall/spr_wall.yy",},

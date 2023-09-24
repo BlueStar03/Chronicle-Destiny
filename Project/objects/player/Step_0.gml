@@ -2,8 +2,25 @@
 hspd=keyboard_check(key_right)-keyboard_check(key_left);
 vspd=keyboard_check(key_down)-keyboard_check(key_up);
 
-hspd*=mspd;
-vspd*=mspd;
+//hspd*=mspd;
+//vspd*=mspd;
+
+spd= point_distance(0,0,hspd,vspd)
+
+if spd!=0{
+	dir=point_direction(0,0,hspd,vspd)
+}
+if abs(spd)>1{spd=1*sign(spd)}
+
+dbug.trace.add("camera dir",camera.orbit.dir)
+//var cdir=point_direction(0,0,hspd,vspd)
+
+spd*=mspd
+dir+=(camera.orbit.dir+90)
+
+hspd=lengthdir_x(spd,dir);
+vspd=lengthdir_y(spd,dir);
+
 
 if place_meeting(x+hspd,y,wall){
 	while(!place_meeting(x+sign(hspd),y,wall)){
