@@ -36,6 +36,9 @@ function Billboard(sprite,shadow=-1,num=8)constructor{
 			draw_sprite(sprite,0,0,0)
 			matrix_set(matrix_world, matrix_build_identity());
 		}
+		if sprite_exists(shadow){
+			draw_3d_sprite(shadow,0,x,y,z-0.1,90,0,0)
+		}
 
 	}
 }

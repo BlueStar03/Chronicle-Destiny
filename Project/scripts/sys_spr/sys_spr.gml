@@ -17,10 +17,9 @@ function Sprite(sprite,shadow=-1,num=8)constructor{
 
 	///@func						step(dir)
 	///@desc						updates the sprite
-	///@arg		{real} dir				direction in degrees the sprite is facing
+	///@arg		{deg} dir				direction in degrees the sprite is facing
 	step=function(dir){
-		var zdir=dir
-		zdir=rollover(dir-(camera.orbit.dir+90),0,360);
+		var zdir=rollover(dir-(camera.orbit.dir+90),0,360);
 		zdir=rollover(zdir,0,360);
 		anim_frame+=anim_speed;
 		if anim_frame>=anim_length{anim_frame=0;}

@@ -1,24 +1,23 @@
 /// @description 
-var rot=keyboard_check(ord("Q"))-keyboard_check(ord("E"));
-camera.orbit.dir+=rot
-
-
 hspd=keyboard_check(key_right)-keyboard_check(key_left);
 vspd=keyboard_check(key_down)-keyboard_check(key_up);
 
-spd= point_distance(0,0,hspd,vspd);
-if spd!=0{
-	dir=point_direction(0,0,hspd,vspd)
-}
+
+var glen= point_distance(0,0,hspd,vspd);
+var gdir=point_direction(0,0,hspd,vspd);
+var gcam=camera.orbit.dir;
+gdir+=gcam+90
+
+//dir=rollover(dir,0,360)
+//if abs(spd)>1{spd=1*sign(spd)}
+//spd*=mspd
+
+//var cdir=dir+(camera.orbit.dir+90)
+
+hspd=lengthdir_x(glen,gdir)*mspd;
+vspd=lengthdir_y(glen,gdir)*mspd;
+if glen!=0{dir=gdir;}
 dir=rollover(dir,0,360)
-if abs(spd)>1{spd=1*sign(spd)}
-spd*=mspd
-
-var cdir=dir+(camera.orbit.dir+90)
-
-hspd=lengthdir_x(spd,cdir);
-vspd=lengthdir_y(spd,cdir);
-
 
 if place_meeting(x+hspd,y,wall){
 	while(!place_meeting(x+sign(hspd),y,wall)){
@@ -36,28 +35,32 @@ if place_meeting(x,y+vspd,wall){
 x+=hspd;
 y+=vspd;
 
+var rot=keyboard_check(ord("Q"))-keyboard_check(ord("E"));
+camera.orbit.dir+=rot
 
 
-
-if spd!=0{
+if glen!=0{
 	spr.set_sprite(spr_test_walk);
 }else{
 	spr.set_sprite(sprites.stand);
 }
 
-var sdir=dir
-spr.step(sdir+45+camera.orbit.dir);
-dbug.trace.add(dir,cdir);
-dbug.trace.add(dir,dir+cdir);
-/*********************/dbug.trace.add("------------------",camera.orbit.dir);
 
+spr.step(dir);
 
+dbug.trace.add(camera.orbit.dir mod 45)
 
-dbug.trace.add("anim_angle",spr.anim_angle);
-dbug.trace.add("anim_frame",spr.anim_frame);
-dbug.trace.add("anim_length",spr.anim_length);
-dbug.trace.add("anim_speed",spr.anim_speed);
-dbug.trace.add("image",spr.image);
-dbug.trace.add("sub",spr.sub);
-dbug.trace.add("sub_angle",spr.sub_angle);
+if rot==0{
+	var _c=camera.orbit.dir
+	var _a=0
+	if (_c mod 45 != 0) {
+		//_c = round(_c / 45) * 45;
+		if (_c % 45 > 22.5) {
+			_a += 1;
+		} else {
+			_a -= 1;
+		}
+		camera.orbit.dir+=_a
+	}
 
+}

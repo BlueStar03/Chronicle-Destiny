@@ -4,8 +4,8 @@ function Camera() constructor{
 	mode="none"
 	focus=noone;
 	
-	pro_mat_orthographic=matrix_build_projection_ortho(window_get_width()/2 ,window_get_height()/2 ,-128,32000);
-	pro_mat_perspective=matrix_build_projection_perspective_fov(60, window_get_width()/window_get_height(),1,32000);
+	pro_mat_orthographic=matrix_build_projection_ortho(WIDTH/2 ,HEIGHT/2 ,-128,32000);
+	pro_mat_perspective=matrix_build_projection_perspective_fov(60, WIDTH/HEIGHT,1,32000);
 	pro_mat=pro_mat_orthographic
 	from={
 		x:0,
