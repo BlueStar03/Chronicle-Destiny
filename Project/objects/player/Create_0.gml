@@ -1,5 +1,5 @@
 /// @description 
-sprite=new Sprite(spr_test_stand);
+spr=new Billboard(spr_test_stand,spr_shadow);
 
 dir=0
 spd=0
@@ -18,4 +18,9 @@ hspd=0
 vspd=0
 mspd=4
 
-tsmap=tilemap_to_vertex_buffer("t_ground")
+
+
+sprites={
+	stand:spr_test_stand,
+	walk:spr_test_walk
+}

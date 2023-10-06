@@ -1,2 +1,2 @@
 /// @description
-sprite.draw(x,y,z)
+spr.draw(x,y,z);

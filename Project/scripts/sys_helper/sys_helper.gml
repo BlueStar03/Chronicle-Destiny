@@ -49,10 +49,15 @@ function draw_text_outline_ext(x,y,str,sep,w,c_str=c_white,c_out=c_black,out=1,q
 ///@param lo
 ///@param hi
 function rollover(value, lo, hi) {
-	var diff=hi-lo
-	value-=lo
-	value+=diff
-	value%=diff
-	value+=lo
-	return value
+	var range = hi - lo;
+	var offset = (value - lo) % range;
+	if (offset < 0) offset += range;
+	return lo + offset;
+	//var diff=hi-lo
+	//value-=lo
+	//value+=diff
+	//value%=diff
+	//value+=lo
+	//return value
+	//Ai
 }

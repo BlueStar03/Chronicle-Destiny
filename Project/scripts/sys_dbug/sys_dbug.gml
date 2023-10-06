@@ -32,6 +32,8 @@ function Dbug() constructor{
 		},
 		
 		draw:function(){
+			draw_set_halign(fa_left);
+			draw_set_valign(fa_top);
 			if on{
 				var output=""
 				for (var i=0;i<array_length(lines);i++){

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "sys_sprite",
+  "name": "sys_input",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

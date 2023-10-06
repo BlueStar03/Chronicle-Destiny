@@ -1,25 +1,23 @@
 /// @description 
+var rot=keyboard_check(ord("Q"))-keyboard_check(ord("E"));
+camera.orbit.dir+=rot
+
+
 hspd=keyboard_check(key_right)-keyboard_check(key_left);
 vspd=keyboard_check(key_down)-keyboard_check(key_up);
 
-//hspd*=mspd;
-//vspd*=mspd;
-
-spd= point_distance(0,0,hspd,vspd)
-
+spd= point_distance(0,0,hspd,vspd);
 if spd!=0{
 	dir=point_direction(0,0,hspd,vspd)
 }
+dir=rollover(dir,0,360)
 if abs(spd)>1{spd=1*sign(spd)}
-
-dbug.trace.add("camera dir",camera.orbit.dir)
-//var cdir=point_direction(0,0,hspd,vspd)
-
 spd*=mspd
-dir+=(camera.orbit.dir+90)
 
-hspd=lengthdir_x(spd,dir);
-vspd=lengthdir_y(spd,dir);
+var cdir=dir+(camera.orbit.dir+90)
+
+hspd=lengthdir_x(spd,cdir);
+vspd=lengthdir_y(spd,cdir);
 
 
 if place_meeting(x+hspd,y,wall){
@@ -38,31 +36,28 @@ if place_meeting(x,y+vspd,wall){
 x+=hspd;
 y+=vspd;
 
-dbug.trace.add(x,y)
-dbug.trace.add(camera.orbit.dir)
-dbug.trace.add(camera.orbit.distance)
-dbug.trace.add(camera.orbit.elevation)
 
 
 
-var rot=keyboard_check(ord("Q"))-keyboard_check(ord("E"));
-camera.orbit.dir+=rot
-
-camera.step();
-if keyboard_check_released(vk_insert){
-	if gpu_get_cullmode()==cull_clockwise{
-		gpu_set_cullmode(cull_counterclockwise)
-	}else if gpu_get_cullmode()==cull_counterclockwise{
-		gpu_set_cullmode(cull_noculling)	
-	}else {
-		gpu_set_cullmode(cull_clockwise)	
-	}
-	
+if spd!=0{
+	spr.set_sprite(spr_test_walk);
+}else{
+	spr.set_sprite(sprites.stand);
 }
-if keyboard_check_released(vk_delete){
-	if camera.pro_mat==camera.pro_mat_orthographic{
-		camera.pro_mat=camera.pro_mat_perspective
-	}else{
-		camera.pro_mat=camera.pro_mat_orthographic;	
-	}
-}
+
+var sdir=dir
+spr.step(sdir+45+camera.orbit.dir);
+dbug.trace.add(dir,cdir);
+dbug.trace.add(dir,dir+cdir);
+/*********************/dbug.trace.add("------------------",camera.orbit.dir);
+
+
+
+dbug.trace.add("anim_angle",spr.anim_angle);
+dbug.trace.add("anim_frame",spr.anim_frame);
+dbug.trace.add("anim_length",spr.anim_length);
+dbug.trace.add("anim_speed",spr.anim_speed);
+dbug.trace.add("image",spr.image);
+dbug.trace.add("sub",spr.sub);
+dbug.trace.add("sub_angle",spr.sub_angle);
+
