@@ -1,6 +1,6 @@
 /// @description 
-var width=640;
-var height=360;
+var width=display.width;
+var height=display.height;
 
 draw_set_color(c_black);
 draw_rectangle(0,0,width,height,false);

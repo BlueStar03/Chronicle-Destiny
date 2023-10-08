@@ -18,6 +18,8 @@ hspd=0
 vspd=0
 mspd=4
 
+srot=0
+
 
 
 sprites={

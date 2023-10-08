@@ -3,9 +3,11 @@
 function Camera() constructor{
 	mode="none"
 	focus=noone;
+	snap=false;
+	snap_sign=0;
 	
-	pro_mat_orthographic=matrix_build_projection_ortho(WIDTH/2 ,HEIGHT/2 ,-128,32000);
-	pro_mat_perspective=matrix_build_projection_perspective_fov(60, WIDTH/HEIGHT,1,32000);
+	pro_mat_orthographic=matrix_build_projection_ortho(display.width/2 ,display.height/2 ,-128,32000);
+	pro_mat_perspective=matrix_build_projection_perspective_fov(60, display.width/display.height,1,32000);
 	pro_mat=pro_mat_orthographic
 	from={
 		x:0,
@@ -24,12 +26,39 @@ function Camera() constructor{
 	}	
 	orbit={
 		dir:270+45,
-		distance:128,
+		distance:128+64,
 		elevation:30,
 	}
 	
 	step=function(){
 		if mode=="orbit"{
+			
+			var rot=keyboard_check(ord("Q"))-keyboard_check(ord("E"));
+			orbit.dir+=rot;
+			if snap{
+				if rot==0{
+					var _c=orbit.dir
+					var _a=0
+					if (_c mod 45 != 0) {
+							if (_c % 45 > 22.5) {
+								_a += 1;
+							} else {
+								_a -= 1;
+							}
+					orbit.dir+=_a
+					}
+				}
+			}else{
+				if sign(rot)==0{
+					if (orbit.dir mod 45 != 0) {
+						orbit.dir+=snap_sign
+					}
+				}else{
+					snap_sign=sign(rot)	
+				}
+			}
+			
+			
 			orbit.dir=rollover(orbit.dir,0,360);
 			if instance_exists(focus){
 				to.x=focus.x;

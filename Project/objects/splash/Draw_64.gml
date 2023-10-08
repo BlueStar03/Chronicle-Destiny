@@ -1,6 +1,6 @@
 var margin=20;
-var _width=640;
-var _height=360;
+var _width=display.width;
+var _height=display.height;
 draw_set_font(fnt_default);
 var label="This is a\nWork In Progress\nplease go to\nbluestar03.com\nfor comments, complaints, suggestions\nand support";
 var link=" \n\n\nbluestar03.com\n\n "

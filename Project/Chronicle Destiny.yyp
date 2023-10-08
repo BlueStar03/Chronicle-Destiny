@@ -19,7 +19,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.1.102",
+    "IDEVersion": "2023.8.2.106",
   },
   "resources": [
     {"id":{"name":"spr_sys","path":"sprites/spr_sys/spr_sys.yy",},},
@@ -30,6 +30,7 @@
     {"id":{"name":"rm_title","path":"rooms/rm_title/rm_title.yy",},},
     {"id":{"name":"player","path":"objects/player/player.yy",},},
     {"id":{"name":"spr_test","path":"sprites/spr_test/spr_test.yy",},},
+    {"id":{"name":"Script11","path":"scripts/Script11/Script11.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"sys_spr","path":"scripts/sys_spr/sys_spr.yy",},},
     {"id":{"name":"sys_helper","path":"scripts/sys_helper/sys_helper.yy",},},
@@ -43,6 +44,7 @@
     {"id":{"name":"fnt_dbug","path":"fonts/fnt_dbug/fnt_dbug.yy",},},
     {"id":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
     {"id":{"name":"sys_billboard","path":"scripts/sys_billboard/sys_billboard.yy",},},
+    {"id":{"name":"sys_dissplay","path":"scripts/sys_dissplay/sys_dissplay.yy",},},
     {"id":{"name":"fnt_title","path":"fonts/fnt_title/fnt_title.yy",},},
     {"id":{"name":"tilemap_to_vertex_buffer","path":"scripts/tilemap_to_vertex_buffer/tilemap_to_vertex_buffer.yy",},},
     {"id":{"name":"scr_3d","path":"scripts/scr_3d/scr_3d.yy",},},

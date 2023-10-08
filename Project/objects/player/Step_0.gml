@@ -7,7 +7,7 @@ var glen= point_distance(0,0,hspd,vspd);
 var gdir=point_direction(0,0,hspd,vspd);
 var gcam=camera.orbit.dir;
 gdir+=gcam+90
-
+if abs(glen)>1{glen=1*sign(glen)}
 //dir=rollover(dir,0,360)
 //if abs(spd)>1{spd=1*sign(spd)}
 //spd*=mspd
@@ -35,8 +35,7 @@ if place_meeting(x,y+vspd,wall){
 x+=hspd;
 y+=vspd;
 
-var rot=keyboard_check(ord("Q"))-keyboard_check(ord("E"));
-camera.orbit.dir+=rot
+
 
 
 if glen!=0{
@@ -47,20 +46,3 @@ if glen!=0{
 
 
 spr.step(dir);
-
-dbug.trace.add(camera.orbit.dir mod 45)
-
-if rot==0{
-	var _c=camera.orbit.dir
-	var _a=0
-	if (_c mod 45 != 0) {
-		//_c = round(_c / 45) * 45;
-		if (_c % 45 > 22.5) {
-			_a += 1;
-		} else {
-			_a -= 1;
-		}
-		camera.orbit.dir+=_a
-	}
-
-}

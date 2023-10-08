@@ -52,7 +52,7 @@ function Dbug() constructor{
 		draw:function(){
 			
 			draw_set_valign(fa_bottom);
-			draw_text_outline(0,360,GM_version)	
+			draw_text_outline(0,display.height,GM_version)	
 		}
 	}
 	
