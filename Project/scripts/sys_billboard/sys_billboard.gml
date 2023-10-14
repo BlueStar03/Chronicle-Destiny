@@ -26,13 +26,13 @@ function Billboard(sprite,shadow=-1,num=8)constructor{
 		anim_length=sprite_get_number(self.sprite)/sub;	
 	}
 
-	draw=function(x,y,z,bill=true){
+	draw=function(x,y,z,bill=true,rot=0){
 		if bill{
-			matrix_set(matrix_world, matrix_build(x, y, z, -90+0, 0, camera.orbit.dir+90, 1, 1, 1));
+			matrix_set(matrix_world, matrix_build(x, y, z, -90+0, 0, camera.orbit.dir+90+rot, 1, 1, 1));
 			draw_sprite(sprite,image,0,0)
 			matrix_set(matrix_world, matrix_build_identity());
 		}else{
-			matrix_set(matrix_world, matrix_build(x, y, z, -90+0, 0, 0, 1, 1, 1));
+			matrix_set(matrix_world, matrix_build(x, y, z, -90+0, 0, 0+rot, 1, 1, 1));
 			draw_sprite(sprite,0,0,0)
 			matrix_set(matrix_world, matrix_build_identity());
 		}

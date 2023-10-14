@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function Camera() constructor{
+	cam=camera_create();
 	mode="none"
 	focus=noone;
 	snap=false;
@@ -77,7 +78,7 @@ function Camera() constructor{
 	
 	draw=function(){
 		draw_clear(c_cornflower)
-		var cam = camera_get_active();
+		cam = camera_get_active();
 		camera_set_view_mat(cam, matrix_build_lookat(from.x, from.y, from.z, to.x, to.y, to.z, up.x, up.y, up.z));
 		camera_set_proj_mat(cam, pro_mat);
 		camera_apply(cam);

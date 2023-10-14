@@ -1,5 +1,11 @@
 /// @description 
-spr=new Billboard(spr_test_stand,spr_shadow);
+sprites={
+	stand:spr_test_stand,
+	walk:spr_test_walk
+}
+
+
+spr=new Billboard(sprites.stand,spr_shadow);
 
 dir=0
 spd=0
@@ -22,7 +28,3 @@ srot=0
 
 
 
-sprites={
-	stand:spr_test_stand,
-	walk:spr_test_walk
-}

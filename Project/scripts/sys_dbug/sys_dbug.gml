@@ -2,7 +2,7 @@ function Dbug() constructor{
 	on=true;
 	system={
 		on:true,
-		a:"ERROR",
+		a:" ",
 		draw:function(){
 			if on{
 				draw_text_outline(1,1,a,c_red,c_dkgrey)	

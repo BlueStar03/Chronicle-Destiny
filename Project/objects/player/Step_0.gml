@@ -39,7 +39,7 @@ y+=vspd;
 
 
 if glen!=0{
-	spr.set_sprite(spr_test_walk);
+	spr.set_sprite(sprites.walk);
 }else{
 	spr.set_sprite(sprites.stand);
 }
