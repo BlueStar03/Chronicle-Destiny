@@ -6,6 +6,7 @@ function Camera() constructor{
 	focus=noone;
 	snap=false;
 	snap_sign=0;
+	type="orthographic"
 	
 	pro_mat_orthographic=matrix_build_projection_ortho(display.width/2 ,display.height/2 ,-128,32000);
 	pro_mat_perspective=matrix_build_projection_perspective_fov(60, display.width/display.height,1,32000);

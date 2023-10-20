@@ -1,5 +1,5 @@
 /// @description
-spr=new Billboard(spr_bush);
+spr=new Billboard(spr_trunk);
 z=0;
 
 

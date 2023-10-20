@@ -2,10 +2,13 @@ function Dbug() constructor{
 	on=true;
 	system={
 		on:true,
-		a:" ",
+		a:"W,A,S,D - Move | Q,E Rotate Camera | 1,2 dbug toggles", 
 		draw:function(){
 			if on{
-				draw_text_outline(1,1,a,c_red,c_dkgrey)	
+				//Temporary
+				draw_set_halign(fa_right);
+				draw_set_valign(fa_bottom)
+				draw_text_outline(display.width,display.height,a,c_white,c_dkgrey)	
 			}
 		}
 	}

@@ -33,7 +33,7 @@ function Billboard(sprite,shadow=-1,num=8)constructor{
 			matrix_set(matrix_world, matrix_build_identity());
 		}else{
 			matrix_set(matrix_world, matrix_build(x, y, z, -90+0, 0, 0+rot, 1, 1, 1));
-			draw_sprite(sprite,0,0,0)
+			draw_sprite(sprite,image,0,0)
 			matrix_set(matrix_world, matrix_build_identity());
 		}
 		if sprite_exists(shadow){

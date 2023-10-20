@@ -14,6 +14,15 @@ vertex_format_add_texcoord();
 vertex_format_add_color();
 _vertex_format = vertex_format_end();
 
+#macro obj_format global._obj_format
+vertex_format_begin();
+vertex_format_add_position_3d();
+vertex_format_add_normal();
+vertex_format_add_color();
+vertex_format_add_texcoord();
+
+_obj_format = vertex_format_end();
+
 ///@function vertex_point_add(buff,x,y,z,nx,ny,nz,u,v)
 ///@description Adds a point to a vertex buffer.
 ///@param buffer
