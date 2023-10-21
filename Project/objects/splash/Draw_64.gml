@@ -3,8 +3,7 @@ var _width=display.width;
 var _height=display.height;
 draw_set_font(fnt_default);
 //var label="This is a\nWork In Progress\nplease go to\nbluestar03.com\nfor comments, complaints, suggestions\nHelp support development at\n  ko-fi.com/zbule";
-var label="This is a\nwork in progress\nhelp support development at\nko-fi/zbule\nfind more info at\nbluestaro3.com"
-var link=" \n\n\nbluestar03.com\n\n\n "
+
 
 
 draw_set_color(c_dkgrey);

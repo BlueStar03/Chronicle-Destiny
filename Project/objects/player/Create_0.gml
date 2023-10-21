@@ -30,6 +30,6 @@ vspd=0
 mspd=4
 
 srot=0
-
+status="stand"
 
 

@@ -15,3 +15,13 @@ _camera=new Camera();
 #macro dbug global._dbug
 _dbug=new Dbug();
 
+enum rainbowcolours
+{
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+}
