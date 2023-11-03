@@ -13,10 +13,13 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Code",
-    "path": "folders/Code.yy",
+    "name": "player",
+    "path": "folders/Code/player.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "GameObject",
+    "path": "objects/GameObject/GameObject.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

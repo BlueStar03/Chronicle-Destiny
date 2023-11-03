@@ -4,9 +4,9 @@ function Camera() constructor{
 	cam=camera_create();
 	mode="none"
 	focus=noone;
-	snap=false;
+	snap=true;
 	snap_sign=0;
-	type="orthographic"
+	type="ortho"
 	
 	pro_mat_orthographic=matrix_build_projection_ortho(display.width/2 ,display.height/2 ,-128,32000);
 	pro_mat_perspective=matrix_build_projection_perspective_fov(60, display.width/display.height,1,32000);
@@ -35,10 +35,12 @@ function Camera() constructor{
 	step=function(){
 		if mode=="orbit"{
 			
-			var rot=keyboard_check(ord("Q"))-keyboard_check(ord("E"));
-			orbit.dir+=rot;
+			var rot=input.joy_right.horizontal.current;
+			orbit.dir+=rot
+			orbit.dir=round(orbit.dir)
 			if snap{
 				if rot==0{
+					
 					var _c=orbit.dir
 					var _a=0
 					if (_c mod 45 != 0) {

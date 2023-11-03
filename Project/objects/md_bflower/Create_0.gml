@@ -1,5 +1,5 @@
 /// @description
-spr=new Billboard(spr_flower);
+spr=new Prism(spr_flower);
 
 z=0;
 

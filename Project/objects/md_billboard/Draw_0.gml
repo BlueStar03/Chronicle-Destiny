@@ -1,6 +1,4 @@
-/// @description
-spr.draw(x,y,z);
-draw_set_halign(fa_center)
-draw_text_outline(x,y+24,"Billboard")
+draw_billboard(spr_test_stand,6,x,y,z)
+draw_text_outline(x,y+24,"billboard")
 
 

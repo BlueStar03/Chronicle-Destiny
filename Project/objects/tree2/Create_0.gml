@@ -1,5 +1,5 @@
 /// @description
-spr=new Billboard(Sprite14);
+spr=new Prism(Sprite14);
 z=0;
 
 

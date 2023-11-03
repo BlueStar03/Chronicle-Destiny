@@ -1,4 +1,4 @@
-function Billboard(sprite,shadow=-1,num=8)constructor{
+function Prism(sprite,shadow=-1,num=8)constructor{
 	self.sprite=sprite;					//The sprite_index
 	image=0;										//The Image_index
 	sub=num;										//How many sub animations

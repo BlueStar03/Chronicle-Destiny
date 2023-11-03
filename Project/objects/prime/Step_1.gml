@@ -1,5 +1,8 @@
 /// @description keyboard shortcuts
 // switch window scale scale
+input.update();
+
+
 if keyboard_check_released(vk_tab){
 	if os_browser==browser_not_a_browser{
 		var s=display.scale
@@ -13,10 +16,10 @@ if keyboard_check_released(vk_tab){
 if keyboard_check_released(ord("1")){
 	if camera.pro_mat==camera.pro_mat_orthographic{
 		camera.pro_mat=camera.pro_mat_perspective
-		camera.type="perspective"
+		camera.type="persp"
 	}else{
 		camera.pro_mat=camera.pro_mat_orthographic;	
-		camera.type="orthographic"
+		camera.type="ortho"
 	}
 }
 //toggle camera snap

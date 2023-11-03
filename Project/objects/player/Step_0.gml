@@ -1,4 +1,15 @@
 /// @description 
+state();
+
+			//var rot=input.joy_right.horizontal.current;
+			camera.orbit.dir+=input.joy_right.horizontal.current;
+
+dbug.trace.add(input.joy_right.horizontal.current)
+dbug.trace.add(camera.orbit.dir)
+//switch state{
+//	case states.free:state_free();break;
+//}
+/*
 hspd=keyboard_check(key_right)-keyboard_check(key_left);
 vspd=keyboard_check(key_down)-keyboard_check(key_up);
 
@@ -6,8 +17,8 @@ vspd=keyboard_check(key_down)-keyboard_check(key_up);
 var glen= point_distance(0,0,hspd,vspd);
 var gdir=point_direction(0,0,hspd,vspd);
 var gcam=camera.orbit.dir;
-gdir+=gcam+90
-if abs(glen)>1{glen=1*sign(glen)}
+gdir+=gcam+90;
+if abs(glen)>1{glen=1*sign(glen)};
 //dir=rollover(dir,0,360)
 //if abs(spd)>1{spd=1*sign(spd)}
 //spd*=mspd
@@ -17,19 +28,19 @@ if abs(glen)>1{glen=1*sign(glen)}
 hspd=lengthdir_x(glen,gdir)*mspd;
 vspd=lengthdir_y(glen,gdir)*mspd;
 if glen!=0{dir=gdir;}
-dir=rollover(dir,0,360)
+dir=rollover(dir,0,360);
 
 if place_meeting(x+hspd,y,wall){
 	while(!place_meeting(x+sign(hspd),y,wall)){
 		x+=sign(hspd);	
 	}
-	hspd=0
+	hspd=0;
 }
 if place_meeting(x,y+vspd,wall){
 	while(!place_meeting(x,y+sign(vspd),wall)){
 		y+=sign(vspd);	
 	}
-	vspd=0
+	vspd=0;
 }
 
 x+=hspd;
@@ -48,3 +59,4 @@ if glen!=0{
 
 
 spr.step(dir);
+*/

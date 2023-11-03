@@ -1,5 +1,5 @@
 /// @description
-spr=new Billboard(spr_test_stand);
+spr=new Prism(spr_test_stand);
 z=0;
 
 spr.image=6

@@ -95,13 +95,13 @@ for(var i=0;i<tm_width;i++){
         }
 		
 	
-		vertex_point_add(vbuff,p1x,p1y,tm_depth, 0,0,1,p1u,p1v,color);
-		vertex_point_add(vbuff,p2x,p2y,tm_depth, 0,0,1,p2u,p2v,color);
-		vertex_point_add(vbuff,p3x,p3y,tm_depth, 0,0,1,p3u,p3v,color);
+		vertex_point_add(vbuff,p1x,p1y,tm_depth, 0,0,-1,p1u,p1v,color);
+		vertex_point_add(vbuff,p2x,p2y,tm_depth, 0,0,-1,p2u,p2v,color);
+		vertex_point_add(vbuff,p3x,p3y,tm_depth, 0,0,-1,p3u,p3v,color);
 
-		vertex_point_add(vbuff,p3x,p3y,tm_depth, 0,0,1,p3u,p3v,color);
-		vertex_point_add(vbuff,p4x,p4y,tm_depth, 0,0,1,p4u,p4v,color);
-		vertex_point_add(vbuff,p1x,p1y,tm_depth, 0,0,1,p1u,p1v,color);
+		vertex_point_add(vbuff,p3x,p3y,tm_depth, 0,0,-1,p3u,p3v,color);
+		vertex_point_add(vbuff,p4x,p4y,tm_depth, 0,0,-1,p4u,p4v,color);
+		vertex_point_add(vbuff,p1x,p1y,tm_depth, 0,0,-1,p1u,p1v,color);
 	}
 }
 

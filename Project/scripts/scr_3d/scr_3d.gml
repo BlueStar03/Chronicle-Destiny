@@ -71,21 +71,21 @@ function model_block(x1,y1,z1,x2,y2,z2,hrepeat=1,vrepeat=1,zrepeat=1) {
 	vertex_begin(vb, v_format);
 
 	//bottom
-	vertex_point_add(vb,	x1,y1,z1,	0,0,-1,	0,0);
-	vertex_point_add(vb,	x1,y2,z1,	0,0,-1,	0,vrepeat);
-	vertex_point_add(vb,	x2,y2,z1,	0,0,-1,	hrepeat,vrepeat);
+	vertex_point_add(vb,	x1,y1,z1,	0,0,1,	0,0);
+	vertex_point_add(vb,	x1,y2,z1,	0,0,1,	0,vrepeat);
+	vertex_point_add(vb,	x2,y2,z1,	0,0,1,	hrepeat,vrepeat);
 												
-	vertex_point_add(vb,	x2,y2,z1,	0,0,-1,	hrepeat,vrepeat);
-	vertex_point_add(vb,	x2,y1,z1,	0,0,-1,	hrepeat,0);
-	vertex_point_add(vb,	x1,y1,z1,	0,0,-1,	0,0);
+	vertex_point_add(vb,	x2,y2,z1,	0,0,1,	hrepeat,vrepeat);
+	vertex_point_add(vb,	x2,y1,z1,	0,0,1,	hrepeat,0);
+	vertex_point_add(vb,	x1,y1,z1,	0,0,1,	0,0);
 	////top								
-	vertex_point_add(vb,	x1,y1,z2,	0,0,1,	0,0);
-	vertex_point_add(vb,	x2,y1,z2,	0,0,1,	hrepeat,0);
-	vertex_point_add(vb,	x2,y2,z2,	0,0,1,	hrepeat,vrepeat);
+	vertex_point_add(vb,	x1,y1,z2,	0,0,-1,	0,0);
+	vertex_point_add(vb,	x2,y1,z2,	0,0,-1,	hrepeat,0);
+	vertex_point_add(vb,	x2,y2,z2,	0,0,-1,	hrepeat,vrepeat);
 										
-	vertex_point_add(vb,	x2,y2,z2,	0,0,1,	hrepeat,vrepeat);
-	vertex_point_add(vb,	x1,y2,z2,	0,0,1,	0,vrepeat);
-	vertex_point_add(vb,	x1,y1,z2,	0,0,1,	0,0);
+	vertex_point_add(vb,	x2,y2,z2,	0,0,-1,	hrepeat,vrepeat);
+	vertex_point_add(vb,	x1,y2,z2,	0,0,-1,	0,vrepeat);
+	vertex_point_add(vb,	x1,y1,z2,	0,0,-1,	0,0);
 	//front								
 	vertex_point_add(vb,	x1,y2,z1,	0,1,0,	0,0);
 	vertex_point_add(vb,	x1,y2,z2,	0,1,0,	0,zrepeat);
