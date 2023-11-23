@@ -1,7 +1,6 @@
 /// @description keyboard shortcuts
 // switch window scale scale
-input.update();
-
+input.step();
 
 if keyboard_check_released(vk_tab){
 	if os_browser==browser_not_a_browser{

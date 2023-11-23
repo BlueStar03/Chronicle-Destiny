@@ -91,50 +91,8 @@ function Dbug() constructor{
 		}
 	}
 	//*****************************************************
-	tgp={
-		draw:function(){
-			if input.mode=="touch"{
-				draw_set_color(c_white)
-				var a=input.touch.b.on?0.5:0;
-				draw_set_alpha(a);
-				draw_rectangle(display.width/2,0,display.width,display.height,false);
-						
-				var a=input.touch.d.on?0.5:0.75;
-				draw_set_alpha(a);
-				draw_rectangle(input.touch.d.x1,input.touch.d.y1,input.touch.d.x2,input.touch.d.y2,false);
-				
-				var a=input.touch.p.on?0.5:0.75;
-				draw_set_alpha(a);
-				draw_rectangle(input.touch.p.x1,input.touch.p.y1,input.touch.p.x2,input.touch.p.y2,false);
-			
-				var a=input.touch.m.on?0.5:0.75;
-				draw_set_alpha(a);
-				draw_rectangle(input.touch.m.x1,input.touch.m.y1,input.touch.m.x2,input.touch.m.y2,false);
-				
-				var a=input.touch.c.on?0.5:0.75;
-				draw_set_alpha(a);
-				draw_rectangle(input.touch.c.x1,input.touch.c.y1,input.touch.c.x2,input.touch.c.y2,false);
-				
-				var a=input.touch.r.on?0.5:0.75;
-				draw_set_alpha(a);
-				draw_rectangle(input.touch.r.x1,input.touch.r.y1,input.touch.r.x2,input.touch.r.y2,false);
-			
-		
-			
-				draw_set_alpha(0.25);
-				if (input.touch.j.origin){
-				
-					draw_circle(input.touch.j.origin_x,input.touch.j.origin_y,input.touch.j.radius,false);
-					draw_circle(input.touch.j.x,input.touch.j.y,30,false)
-				
-				}			
-			
-				draw_set_alpha(1);
-			
-			}
-		}
-	}
-	
+
+
 	//********************************************************
 	draw=function(){
 		draw_set_font(fnt_dbug);
@@ -146,7 +104,9 @@ function Dbug() constructor{
 			level.draw();
 			build.draw();
 			screen.draw();
-			tgp.draw();
+			
+			//
+
 		}
 	}
 }

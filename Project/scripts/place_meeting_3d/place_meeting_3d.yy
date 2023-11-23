@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "sys_camera",
+  "name": "place_meeting_3d",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "system",
-    "path": "folders/Code/scripts/system.yy",
+    "name": "3d collisions",
+    "path": "folders/Code/scripts/3d collisions.yy",
   },
 }

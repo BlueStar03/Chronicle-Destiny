@@ -3,7 +3,7 @@ function Vector3(x,y,z)constructor{
 	self.y=y;
 	self.z=z;
 	
-	static Add = function(val) {
+	static add = function(val) {
 		return new Vector3(self.x + val.x, self.y + val.y, self.z + val.z);
 	}
 	static subtract = function(val) {
@@ -44,4 +44,8 @@ function Vector3(x,y,z)constructor{
 		var mag = self.magnitude();
 		return new Vector3(self.x/ mag, self.y/ mag, self.z/ mag);
 	}
+	
+	    static Abs = function() {
+        return new Vector3(abs(self.x), abs(self.y), abs(self.z));
+    };
 }

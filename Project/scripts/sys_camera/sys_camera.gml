@@ -35,7 +35,7 @@ function Camera() constructor{
 	step=function(){
 		if mode=="orbit"{
 			
-			var rot=input.joy_right.horizontal.current;
+			var rot=keyboard_check(ord("Q"))-keyboard_check(ord("E"));
 			orbit.dir+=rot
 			orbit.dir=round(orbit.dir)
 			if snap{

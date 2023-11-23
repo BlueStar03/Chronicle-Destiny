@@ -1,15 +1,3 @@
-/// @description 
-state();
-
-			//var rot=input.joy_right.horizontal.current;
-			camera.orbit.dir+=input.joy_right.horizontal.current;
-
-dbug.trace.add(input.joy_right.horizontal.current)
-dbug.trace.add(camera.orbit.dir)
-//switch state{
-//	case states.free:state_free();break;
-//}
-/*
 hspd=keyboard_check(key_right)-keyboard_check(key_left);
 vspd=keyboard_check(key_down)-keyboard_check(key_up);
 
@@ -59,4 +47,3 @@ if glen!=0{
 
 
 spr.step(dir);
-*/

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "sys_camera",
+  "name": "sys_display",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
