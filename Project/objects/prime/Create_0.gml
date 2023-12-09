@@ -10,3 +10,5 @@ quit=0
 tsmap=""
 
 world=new col_world(128)
+
+collider=undefined

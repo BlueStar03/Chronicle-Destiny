@@ -25,22 +25,20 @@ function Sphere(x,y,z=undefined,r=undefined)constructor{
 	};
 
 	static check_ray = function(ray, hit_info,maxt=infinity) {
-		var e=position.subtract(ray.origin);//vector from the sphere position to the ray origin
-		var rdir=ray.direction.normalize();//normalized ray direction
-		var t=e.dot(rdir);//distance from the ray origin to the point on the ray closest to the sphere position
+		var SPtoRO=position.subtract(ray.origin);//vector from the sphere position to the ray origin
+		var RD=ray.direction.normalize();//normalized ray direction
+		var t=SPtoRO.dot(RD);//distance from the ray origin to the point on the ray closest to the sphere position
 		if t+radius<0 return false//if t < 0 sphere is behind ray, return false
-		if t>maxt return false
-		var p=ray.origin.add(rdir.multiply(t))// the point on the ray closest to the sphere center
+		if t>maxt return false// if it is beyond the specified distance, stop and return false 
+		var p=ray.origin.add(RD.multiply(t))// the point on the ray closest to the sphere center		
+		var i=position.subtract(p).magnitude();// distance from p to SO
+		if i>radius return false;// if i is greater than R, there is no collision, retun false
+		var j=sqrt(power(radius,2)-(i*i))//length from P to where it intect the shpere.  Pathagora (A^2 + B^2 = c^2, j^2 + i^2= r^2 )
+		var k=(t-j)// the distance to the entry intesection
+		if k<0{	k=t+j}// if the distence is negative, ther is no entry, ray is inside the sphere, get distance to the exit intersection 
 		
-		var i=position.subtract(p).magnitude();// distance from p to sphere center
-		if i>radius return false;// if the distance is grater than the radius, there is no collision, retun false
-		var j=sqrt(power(radius,2)-(i*i))
-		var t1=max(t-j,0)
-		if t1=0
-		t1=t+j
-		
-		var contact_point=ray.origin.add(rdir.multiply(t1))
-		hit_info.update(t1, self, contact_point, contact_point.subtract(self.position).normalize());
+		var contact_point=ray.origin.add(RD.multiply(k))// point location is from RO, add nornilized RD scaled to k 
+		hit_info.update(k, self, contact_point, contact_point.subtract(self.position).normalize());
 		
 		return true
 	

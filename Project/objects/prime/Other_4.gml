@@ -8,3 +8,12 @@ tsmap=tilemap_to_vertex_buffer("t_ground")
 }else{
 	tsmap=""	
 }
+
+//if room==rm_test{
+//	fl=instance_create_depth(0,0,0,wall,
+//	{
+//		z:-18,
+//		image_xscale:room_width/16,
+//		image_yscale:room_height/16,
+//	});
+//}

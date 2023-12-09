@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "sys_input",
+  "name": "World",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "system",
-    "path": "folders/Code/scripts/system.yy",
+    "name": "3d Collisions",
+    "path": "folders/Code/scripts/3d Collisions.yy",
   },
 }

@@ -9,9 +9,26 @@ spr=new Prism(sprites.stand,spr_shadow);
 camera.focus=self;
 camera.mode="orbit";
 
-hspd=0;
-vspd=0;
+xspd=0;
+yspd=0;
+zspd=0;
 mspd=4;
+jspd=-5;
+grav=0.25;
+
+
+
+ground=0;
+jump_key_hold=false
+jump_spd=4;
+jump_max=2;
+jump_count=0;
+jump_hold_frames=15
+jump_timer=0
+
+coll_offset=16
+
+
 
 dir=0;
 spd=0;
@@ -20,6 +37,8 @@ key_left=ord("A");
 key_right=ord("D");
 key_up=ord("W");
 key_down=ord("S");
+key_jump=vk_space;
+key_jump_pressed=false
 
 //shape=new col_aabb(new Vector3(x,y,0),new Vector3(10,10,10)) 
 
