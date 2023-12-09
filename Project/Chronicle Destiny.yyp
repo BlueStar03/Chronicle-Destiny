@@ -79,6 +79,7 @@
     {"id":{"name":"Ray","path":"scripts/Ray/Ray.yy",},},
     {"id":{"name":"main","path":"scripts/main/main.yy",},},
     {"id":{"name":"spr_test_walk_l","path":"sprites/spr_test_walk_l/spr_test_walk_l.yy",},},
+    {"id":{"name":"test_ray16","path":"objects/test_ray16/test_ray16.yy",},},
     {"id":{"name":"Vector3","path":"scripts/Vector3/Vector3.yy",},},
     {"id":{"name":"title","path":"objects/title/title.yy",},},
     {"id":{"name":"sys_dbug","path":"scripts/sys_dbug/sys_dbug.yy",},},

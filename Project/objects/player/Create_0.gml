@@ -27,9 +27,10 @@ var xs=sprite_get_width(sprite_index)*image_xscale;
 var ys=sprite_get_height(sprite_index)*image_yscale;
 var zs=sprite_get_height(sprite_index)*2;
 
-collider=new Collider(	new AABB(new Vector3(x,y,z),new Vector3(x+xs,y+ys,z-zs),true))
-//collider=new Collider(	new Sphere(new Vector3(x,y,z-16),16))
+c1=new Collider(	new AABB(new Vector3(x,y,z),new Vector3(x+xs,y+ys,z-zs),true))
+c2=new Collider(	new Sphere(new Vector3(x,y,z-16),16))
+collider=c1
 
-shape=new AABB(new Vector3(x,y,z),new Vector3(x+xs,y+ys,z-zs),true)
+//shape=new AABB(new Vector3(x,y,z),new Vector3(x+xs,y+ys,z-zs),true)
 
 

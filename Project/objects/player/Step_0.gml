@@ -1,4 +1,12 @@
 /// @description 
+if keyboard_check_pressed(vk_control){
+	if collider==c1{
+		collider=c2
+	}else{
+		collider=c1	
+	}
+}
+mspd=keyboard_check(vk_shift)?1:4;
 hspd=input.move[0]
 vspd=input.move[1]
 
@@ -21,11 +29,21 @@ if glen!=0{dir=gdir;}
 dir=rollover(dir,0,360);
 
 collider.shape.position.x=x+hspd;
-collider.shape.position.y=y+vspd;
+collider.shape.position.y=y;
 
 with wall{
 	if collider.check_collider(other.collider){
 		other.hspd=0;
+
+	}
+}
+
+collider.shape.position.x=x
+collider.shape.position.y=y+vspd;
+
+with wall{
+	if collider.check_collider(other.collider){
+
 		other.vspd=0;
 	}
 }

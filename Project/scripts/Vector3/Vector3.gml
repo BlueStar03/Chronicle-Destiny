@@ -10,8 +10,8 @@ function Vector3(x,y,z)constructor{
 		return new Vector3(self.x + val.x, self.y + val.y, self.z + val.z);
 	}
 
-	static subtract = function(vec3) {
-		return new Vector3(self.x - vec3.x, self.y - vec3.y, self.z - vec3.z);
+	static subtract = function(val) {
+		return new Vector3(self.x - val.x, self.y - val.y, self.z - val.z);
 	}
 
 	static multiply = function(val) {

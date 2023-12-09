@@ -24,11 +24,29 @@ function Sphere(x,y,z=undefined,r=undefined)constructor{
 		return dist < self.radius;
 	};
 
-	static check_ray = function(ray, hit_info) {
+	static check_ray = function(ray, hit_info,maxt=infinity) {
+		var e=position.subtract(ray.origin);//vector from the sphere position to the ray origin
+		var rdir=ray.direction.normalize();//normalized ray direction
+		var t=e.dot(rdir);//distance from the ray origin to the point on the ray closest to the sphere position
+		dbug.trace.add(t,maxt)
+		if t+radius<0 return false//if t < 0 sphere is behind ray, return false
+		if t>maxt return false
+		var p=ray.origin.add(rdir.multiply(t))// the point on the ray closest to the sphere center
 		
+		var i=position.subtract(p).magnitude();// distance from p to sphere center
+		if i>radius return false;// if the distance is grater than the radius, there is no collision, retun false
+		var j=sqrt(power(radius,2)-(i*i))
+		var t1=max(t-j,0)
+		if t1=0
+		t1=t+j
+		
+		var contact_point=ray.origin.add(rdir.multiply(t1))
+		hit_info.update(t1, self, contact_point, contact_point.subtract(self.position).normalize());
+		
+		return true
 	
 		
-		
+		/*
 		var e = self.position.subtract(ray.origin);
 		var mag_squared = power(e.magnitude(), 2);
 		var r_squared = power(self.radius, 2);
@@ -46,6 +64,7 @@ function Sphere(x,y,z=undefined,r=undefined)constructor{
 		hit_info.update(t, self, contact_point, contact_point.subtract(self.position).normalize());
 
 		return true;
+		*/
 	};
 
 	static check_line = function(line) {
@@ -69,6 +88,8 @@ function Sphere(x,y,z=undefined,r=undefined)constructor{
 	};
 
 	static dbug_draw = function(col=c_white){
+		
+		
 		var vbuff = vertex_create_buffer();
 		vertex_begin(vbuff, v_format);
 		

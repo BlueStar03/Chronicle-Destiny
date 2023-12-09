@@ -48,6 +48,7 @@
     {"name":"AABB","order":2,"path":"scripts/AABB/AABB.yy",},
     {"name":"Ray","order":3,"path":"scripts/Ray/Ray.yy",},
     {"name":"spr_test_walk_l","order":9,"path":"sprites/spr_test_walk_l/spr_test_walk_l.yy",},
+    {"name":"test_ray16","order":26,"path":"objects/test_ray16/test_ray16.yy",},
     {"name":"Vector3","order":6,"path":"scripts/Vector3/Vector3.yy",},
     {"name":"title","order":3,"path":"objects/title/title.yy",},
     {"name":"sys_dbug","order":1,"path":"scripts/sys_dbug/sys_dbug.yy",},
