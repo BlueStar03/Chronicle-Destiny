@@ -9,3 +9,4 @@ draw_set_lighting(false);
 quit=0
 tsmap=""
 
+world=new col_world(128)

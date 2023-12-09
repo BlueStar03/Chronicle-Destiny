@@ -7,8 +7,8 @@ function Camera() constructor{
 	snap=true;
 	snap_sign=0;
 	type="ortho"
-	
-	pro_mat_orthographic=matrix_build_projection_ortho(display.width/2 ,display.height/2 ,-128,32000);
+	zoom=2
+	pro_mat_orthographic=matrix_build_projection_ortho(display.width/zoom ,display.height/zoom ,-128,32000);
 	pro_mat_perspective=matrix_build_projection_perspective_fov(60, display.width/display.height,1,32000);
 	pro_mat=pro_mat_orthographic
 	from={

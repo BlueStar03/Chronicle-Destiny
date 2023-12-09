@@ -1,12 +1,14 @@
-hspd=keyboard_check(key_right)-keyboard_check(key_left);
-vspd=keyboard_check(key_down)-keyboard_check(key_up);
-
+/// @description 
+hspd=input.move[0]
+vspd=input.move[1]
 
 var glen= point_distance(0,0,hspd,vspd);
 var gdir=point_direction(0,0,hspd,vspd);
 var gcam=camera.orbit.dir;
 gdir+=gcam+90;
 if abs(glen)>1{glen=1*sign(glen)};
+
+
 //dir=rollover(dir,0,360)
 //if abs(spd)>1{spd=1*sign(spd)}
 //spd*=mspd
@@ -18,24 +20,54 @@ vspd=lengthdir_y(glen,gdir)*mspd;
 if glen!=0{dir=gdir;}
 dir=rollover(dir,0,360);
 
-if place_meeting(x+hspd,y,wall){
-	while(!place_meeting(x+sign(hspd),y,wall)){
-		x+=sign(hspd);	
+collider.shape.position.x=x+hspd;
+collider.shape.position.y=y+vspd;
+
+with wall{
+	if collider.check_collider(other.collider){
+		other.hspd=0;
+		other.vspd=0;
 	}
-	hspd=0;
 }
-if place_meeting(x,y+vspd,wall){
-	while(!place_meeting(x,y+sign(vspd),wall)){
-		y+=sign(vspd);	
-	}
-	vspd=0;
-}
+
+//var colx=false
+//var coly=false
+
+//with wall{
+//	player_.shape.position.x+=player_.hspd;
+//	if shape.check_aabb(player_.shape){colx=true;}
+//	player_.shape.position.x=player_.x
+//	player_.shape.position.y+=player_.vspd;
+	
+//	//dbug.trace.add( shape.check_aabb(player_.shape));
+//	if shape.check_aabb(player_.shape){coly=true;}
+//	player_.shape.position.y=player_.y;
+	
+//}
+//if colx{hspd=0;}
+//if coly{vspd=0;}
+
+//if place_meeting_3d(x+hspd,y,wall){
+//	while(!place_meeting_3d(x+sign(hspd),y,wall)){
+//		x+=sign(hspd);	
+//	}
+//	hspd=0;
+//}
+//if place_meeting_3d(x,y+vspd,wall){
+//	while(!place_meeting_3d(x,y+sign(vspd),wall)){
+//		y+=sign(vspd);	
+//	}
+//	vspd=0;
+//}
 
 x+=hspd;
 y+=vspd;
 
+collider.shape.position.x=x;
+collider.shape.position.y=y;
 
-
+//sphere.position.x=x;
+//sphere.position.y=y;
 
 if glen!=0{
 	spr.set_sprite(sprites.walk);

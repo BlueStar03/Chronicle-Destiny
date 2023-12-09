@@ -11,7 +11,7 @@ var _x = x;
 var _y = y;
 var _obj = obj;
 
-var shape=new col_aabb(player_.shape.position, player_.shape.half_extents);
+var shape=new AABB(player.shape.position, player.shape.half_extents);
 
 shape.position.x=x;
 shape.position.y=y;

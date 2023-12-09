@@ -88,20 +88,15 @@ for(var i=0;i<tm_width;i++){
 		var p4u =	uv_left					;
 		var p4v =	 uv_bottom				;
 		
-		if ((i % 2 == 0 && j % 2 == 0) || (i % 2 > 0 && j % 2 > 0)) {
-            var color = c_white;
-        } else {
-            var color = c_white;
-        }
 		
 	
-		vertex_point_add(vbuff,p1x,p1y,tm_depth, 0,0,-1,p1u,p1v,color);
-		vertex_point_add(vbuff,p2x,p2y,tm_depth, 0,0,-1,p2u,p2v,color);
-		vertex_point_add(vbuff,p3x,p3y,tm_depth, 0,0,-1,p3u,p3v,color);
-
-		vertex_point_add(vbuff,p3x,p3y,tm_depth, 0,0,-1,p3u,p3v,color);
-		vertex_point_add(vbuff,p4x,p4y,tm_depth, 0,0,-1,p4u,p4v,color);
-		vertex_point_add(vbuff,p1x,p1y,tm_depth, 0,0,-1,p1u,p1v,color);
+		vertex_point_add(vbuff,p1x,p1y,tm_depth,,,p1u,p1v, 0,0,-1);
+		vertex_point_add(vbuff,p2x,p2y,tm_depth,,,p2u,p2v, 0,0,-1);
+		vertex_point_add(vbuff,p3x,p3y,tm_depth,,,p3u,p3v, 0,0,-1);
+												  		 
+		vertex_point_add(vbuff,p3x,p3y,tm_depth,,,p3u,p3v, 0,0,-1);
+		vertex_point_add(vbuff,p4x,p4y,tm_depth,,,p4u,p4v, 0,0,-1);
+		vertex_point_add(vbuff,p1x,p1y,tm_depth,,,p1u,p1v, 0,0,-1);
 	}
 }
 

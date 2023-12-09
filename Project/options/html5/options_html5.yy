@@ -25,9 +25,9 @@
   "option_html5_splash_png": "splash.png",
   "option_html5_texture_page": "2048x2048",
   "option_html5_use_facebook": false,
-  "option_html5_usebuiltinfont": true,
-  "option_html5_usebuiltinparticles": true,
+  "option_html5_usebuiltinfont": false,
+  "option_html5_usebuiltinparticles": false,
   "option_html5_usesplash": false,
-  "option_html5_version": "0.1.0.0",
+  "option_html5_version": "0.2.0.0",
   "option_html5_webgl": 2,
 }
