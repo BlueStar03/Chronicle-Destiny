@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "objects",
-    "path": "folders/Code/objects.yy",
+    "name": "collider test",
+    "path": "folders/Code/objects/collider test.yy",
   },
   "parentObjectId": {
     "name": "GameObject",
@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_sys",
-    "path": "sprites/spr_sys/spr_sys.yy",
+    "name": "spr_test_sphere",
+    "path": "sprites/spr_test_sphere/spr_test_sphere.yy",
   },
   "spriteMaskId": null,
   "visible": true,

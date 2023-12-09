@@ -27,7 +27,7 @@ function AABB(point_min, point_max, min_max=true) constructor{
 		return ((box_min.x <= other_max.x) && (box_max.x >= other_min.x) && (box_min.y <= other_max.y) && (box_max.y >= other_min.y) && (box_min.z <= other_max.z) && (box_max.z >= other_min.z));
 	};
 
-	static check_ray = function(ray, hit_info) {
+	static check_ray = function(ray, hit_info, maxt=infinity) {
 		var box_min = self.get_min();
 		var box_max = self.get_max();
 
@@ -60,7 +60,7 @@ function AABB(point_min, point_max, min_max=true) constructor{
 			if (tmin > 0) {
 				t = tmin;
 			}
-
+			if t>maxt return false
 		var contact_point = ray.origin.add(ray.direction.multiply(t));
 
 		var tnormal;

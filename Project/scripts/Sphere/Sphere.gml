@@ -28,7 +28,6 @@ function Sphere(x,y,z=undefined,r=undefined)constructor{
 		var e=position.subtract(ray.origin);//vector from the sphere position to the ray origin
 		var rdir=ray.direction.normalize();//normalized ray direction
 		var t=e.dot(rdir);//distance from the ray origin to the point on the ray closest to the sphere position
-		dbug.trace.add(t,maxt)
 		if t+radius<0 return false//if t < 0 sphere is behind ray, return false
 		if t>maxt return false
 		var p=ray.origin.add(rdir.multiply(t))// the point on the ray closest to the sphere center

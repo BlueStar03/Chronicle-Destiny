@@ -25,6 +25,7 @@ function Point(x,y=undefined,z=undefined) constructor{
 	};
 
 	static check_ray = function(ray, hit_info) {
+		return false;//just dont bother
 		var nearest = ray.nearest_point(self.position);
 		if (nearest.distance_to(self.position) != 0) return false;
 

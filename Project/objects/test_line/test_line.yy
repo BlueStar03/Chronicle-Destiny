@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_sys",
-    "path": "sprites/spr_sys/spr_sys.yy",
+    "name": "spr_test_line",
+    "path": "sprites/spr_test_line/spr_test_line.yy",
   },
   "spriteMaskId": null,
   "visible": true,

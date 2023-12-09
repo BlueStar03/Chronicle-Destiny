@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_sys",
+  "name": "spr_test_sphere",
   "bbox_bottom": 15,
   "bbox_left": 0,
   "bbox_right": 15,
@@ -15,15 +15,15 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"85a74083-f2a5-4760-9c67-0badb0fbf0fb",},
   ],
-  "gridX": 8,
-  "gridY": 16,
+  "gridX": 1,
+  "gridY": 1,
   "height": 16,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"dd7a844c-fcf3-47b6-9e81-ce4272f74b28","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 0,
+  "origin": 4,
   "parent": {
     "name": "Assets",
     "path": "folders/Assets.yy",
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_sys",
+    "name": "spr_test_sphere",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,13 +54,13 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"85a74083-f2a5-4760-9c67-0badb0fbf0fb","path":"sprites/spr_sys/spr_sys.yy",},},},"Disabled":false,"id":"44981749-ca48-4110-9ec6-9244e9372b76","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"85a74083-f2a5-4760-9c67-0badb0fbf0fb","path":"sprites/spr_test_sphere/spr_test_sphere.yy",},},},"Disabled":false,"id":"d36a1dc1-6e56-40eb-bf16-60041bf79ddc","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 0,
-    "yorigin": 0,
+    "xorigin": 8,
+    "yorigin": 8,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

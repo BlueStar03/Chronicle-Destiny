@@ -6,7 +6,7 @@ if keyboard_check_pressed(vk_control){
 		collider=c1	
 	}
 }
-mspd=keyboard_check(vk_shift)?1:4;
+mspd=keyboard_check(vk_shift)?0.5:4;
 hspd=input.move[0]
 vspd=input.move[1]
 

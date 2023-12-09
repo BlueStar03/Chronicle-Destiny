@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "test_point",
+  "name": "test_ray_rot",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "collider test",
-    "path": "folders/Code/objects/collider test.yy",
+    "name": "objects",
+    "path": "folders/Code/objects.yy",
   },
   "parentObjectId": {
     "name": "GameObject",
@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_test_point",
-    "path": "sprites/spr_test_point/spr_test_point.yy",
+    "name": "spr_ray_test",
+    "path": "sprites/spr_ray_test/spr_ray_test.yy",
   },
   "spriteMaskId": null,
   "visible": true,
