@@ -1,6 +1,7 @@
-///@function function_name(x,[c_str])
+///@function Ray(origin, direction)
 ///@description What it does
-///@param x {real} what it is
+///@param origin {real} what it is
+///@param direction {real} what it is
 
 function Ray(origin, direction) constructor{
 	self.origin=origin;														//Vect3

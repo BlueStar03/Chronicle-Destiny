@@ -20,6 +20,9 @@ _input=new Input();
 #macro dbug global._dbug
 _dbug=new Dbug();
 
+
+#macro world global._world
+_world=new World()
 enum rainbowcolours
 {
     red,

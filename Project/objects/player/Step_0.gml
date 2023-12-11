@@ -1,3 +1,4 @@
+mspd=keyboard_check(vk_shift)?0.5:4
 key_jump_pressed=keyboard_check_pressed(key_jump)
 
 xspd=(keyboard_check(key_right)-keyboard_check(key_left));
@@ -30,39 +31,48 @@ collider.shape.position.x=x+xspd;
 collider.shape.position.y=y;
 collider.shape.position.z=zo;
 
-with wall{
-	if collider.check_collider(other.collider){
-		other.xspd=0;
-
-	}
+if world.check_collider(collider){
+	xspd=0	
 }
+//with wall{
+//	if collider.check_collider(other.collider){
+//		other.xspd=0;
+
+//	}
+//}
 collider.shape.position.x=x
 collider.shape.position.y=y+yspd;
 collider.shape.position.z=zo;
 
-with wall{
-	if collider.check_collider(other.collider){
-
-		other.yspd=0;
-	}
+if world.check_collider(collider){
+	yspd=0	
 }
+//with wall{
+//	if collider.check_collider(other.collider){
+
+//		other.yspd=0;
+//	}
+//}
 collider.shape.position.x=x
 collider.shape.position.y=y;
 collider.shape.position.z=zo+zspd;
 
-with wall{
-	if collider.check_collider(other.collider){
-
-		other.zspd=0;
-	}
-}
-
-
-
-
-if z+zspd>0{
+if world.check_collider(collider){
 	zspd=0	
 }
+//with wall{
+//	if collider.check_collider(other.collider){
+
+//		other.zspd=0;
+//	}
+//}
+
+
+
+
+//if z+zspd>0{
+//	zspd=0	
+//}
 
 
 
@@ -73,6 +83,24 @@ z+=zspd;
 collider.shape.position.x=x;
 collider.shape.position.y=y;
 collider.shape.position.z=zo;
+
+
+
+if glen!=0{
+	spr.set_sprite(sprites.walk);
+	status="walk";
+}else{
+	spr.set_sprite(sprites.stand);
+	status="stand";
+}
+if zspd>0{
+	status="fall";
+}else if zspd<-1{
+	status="jump";
+}
+dbug.trace.add(status)
+
+spr.step(dir);
 
 /// @description 
 

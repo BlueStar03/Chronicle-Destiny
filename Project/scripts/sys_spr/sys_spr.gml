@@ -57,8 +57,8 @@ function Sprite(sprite,shadow=-1,num=8)constructor{
 	///@arg		{real} [aa]				alpha to draw the sprite
 	draw=function(x,y,z,sx=1,sy=1,ir=0,cc=c_white,aa=1){
 		draw_3d_billboard(index,image,x,y,z,sx,sy,ir,cc,aa);
-		if sprite_exists(shadow){
-			draw_3d_sprite(shadow,0,x,y,z-0.1,90,0,0)
+		if sprite_exists(obj_shadow){
+			draw_3d_sprite(obj_shadow,0,x,y,z-0.1,90,0,0)
 		}
 	}//******************************************************************************
 	

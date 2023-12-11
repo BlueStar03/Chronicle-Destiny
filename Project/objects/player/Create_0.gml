@@ -4,8 +4,9 @@ sprites={
 	stand:spr_test_stand,
 	walk:spr_test_walk
 }
-spr=new Prism(sprites.stand,spr_shadow);
-
+z=-0.1
+spr=new Prism(sprites.stand);
+instance_create_layer(x,y,"Instances",obj_shadow)
 camera.focus=self;
 camera.mode="orbit";
 
@@ -29,10 +30,8 @@ jump_timer=0
 coll_offset=16
 
 
-
 dir=0;
 spd=0;
-
 key_left=ord("A");
 key_right=ord("D");
 key_up=ord("W");
