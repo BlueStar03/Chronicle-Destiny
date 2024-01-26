@@ -1,4 +1,4 @@
-mspd=keyboard_check(vk_shift)?0.5:4
+mspd=keyboard_check(vk_shift)?0.5:3
 key_jump_pressed=keyboard_check_pressed(key_jump)
 
 xspd=(keyboard_check(key_right)-keyboard_check(key_left));
@@ -9,6 +9,8 @@ var gdir=point_direction(0,0,xspd,yspd);
 var gcam=camera.orbit.dir;
 gdir+=gcam+90;
 if abs(glen)>1{glen=1*sign(glen)};
+
+
 
 
 //dir=rollover(dir,0,360)
@@ -25,7 +27,16 @@ dir=rollover(dir,0,360);
 zspd+=grav
 var zo=z-coll_offset
 if key_jump_pressed{
-	zspd=jspd	
+	probe.origin.x=player.x;
+	probe.origin.y=player.y;
+	probe.origin.z=player.z;
+	
+	world.check_ray(probe,hit_info)
+	if hit_info.distance<1{
+		zspd=jspd
+		hit_info.clear()
+	}
+		
 }
 collider.shape.position.x=x+xspd;
 collider.shape.position.y=y;
@@ -95,10 +106,14 @@ if glen!=0{
 }
 if zspd>0{
 	status="fall";
+	spr.set_sprite(sprites.fall);
 }else if zspd<-1{
 	status="jump";
+	spr.set_sprite(sprites.jump);
 }
 dbug.trace.add(status)
+
+
 
 spr.step(dir);
 

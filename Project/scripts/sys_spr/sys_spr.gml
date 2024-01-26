@@ -58,7 +58,7 @@ function Sprite(sprite,shadow=-1,num=8)constructor{
 	draw=function(x,y,z,sx=1,sy=1,ir=0,cc=c_white,aa=1){
 		draw_3d_billboard(index,image,x,y,z,sx,sy,ir,cc,aa);
 		if sprite_exists(obj_shadow){
-			draw_3d_sprite(obj_shadow,0,x,y,z-0.1,90,0,0)
+			draw_sprite_3d(obj_shadow,0,x,y,z-0.1,90,0,0)
 		}
 	}//******************************************************************************
 	
@@ -77,7 +77,7 @@ function Sprite(sprite,shadow=-1,num=8)constructor{
 	///@arg		{color} [cc]				color to draw the sprite
 	///@arg		{real} [aa]				alpha to draw the sprite
 	draw_plane=function(x,y,z,rx=0,ry=0,rz=0,sx=1,sy=1,ir=0,cc=c_white,aa=1){
-		draw_3d_sprite(index,image,x,y,z,rx,ry,rz,sx,sy,ir,cc,aa)
+		draw_sprite_3d(index,image,x,y,z,rx,ry,rz,sx,sy,ir,cc,aa)
 	}
 }
 //////////////////////////////////////////////////////////////////////////////
@@ -86,7 +86,7 @@ function Sprite(sprite,shadow=-1,num=8)constructor{
 
 
 
-function draw_3d_sprite(ss,ii,xx,yy,zz,rx=0,ry=0,rz=0,xs=1,ys=1,ir=0,cc=c_white,aa=1){
+function draw_sprite_3d(ss,ii,xx,yy,zz,rx=0,ry=0,rz=0,xs=1,ys=1,ir=0,cc=c_white,aa=1){
 	matrix_set(matrix_world, matrix_build(xx, yy, zz, -90+rx, ry, rz, 1, 1, 1));
 	draw_sprite_ext( ss, ii, 0, 0, xs, ys, ir, cc, aa );
 	matrix_set(matrix_world, matrix_build_identity());

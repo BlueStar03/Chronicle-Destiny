@@ -4,7 +4,7 @@
   "name": "tl_grid",
   "bbox_bottom": 63,
   "bbox_left": 0,
-  "bbox_right": 63,
+  "bbox_right": 79,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -17,7 +17,7 @@
   ],
   "gridX": 8,
   "gridY": 8,
-  "height": 64,
+  "height": 256,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8862edd9-8136-46ef-adfe-125f88a6138f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Assets",
-    "path": "folders/Assets.yy",
+    "name": "Tiles",
+    "path": "folders/Assets/Tiles.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 64,
+  "width": 256,
 }

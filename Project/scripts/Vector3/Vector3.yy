@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "3d Collisions",
-    "path": "folders/Code/scripts/3d Collisions.yy",
+    "name": "math",
+    "path": "folders/Code/3d Collisions/math.yy",
   },
 }

@@ -32,8 +32,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Assets",
-    "path": "folders/Assets.yy",
+    "name": "group2",
+    "path": "folders/Assets/group2.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

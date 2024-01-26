@@ -2,7 +2,9 @@
 status="none"
 sprites={
 	stand:spr_test_stand,
-	walk:spr_test_walk
+	walk:spr_test_walk,
+	jump:spr_test_jump,
+	fall:spr_test_fall,
 }
 z=-0.1
 spr=new Prism(sprites.stand);
@@ -13,7 +15,7 @@ camera.mode="orbit";
 xspd=0;
 yspd=0;
 zspd=0;
-mspd=4;
+mspd=2;
 jspd=-5;
 grav=0.25;
 
@@ -45,10 +47,11 @@ var xs=sprite_get_width(sprite_index)*image_xscale;
 var ys=sprite_get_height(sprite_index)*image_yscale;
 var zs=sprite_get_height(sprite_index)*2;
 
-c1=new Collider(	new AABB(new Vector3(x,y,z),new Vector3(x+xs,y+ys,z-zs),true))
-c2=new Collider(	new Sphere(new Vector3(x,y,z-16),16))
-collider=c1
-
+//c1=new Collider(	new AABB(new Vector3(x,y,z),new Vector3(x+xs,y+ys,z-zs),true))
+//c2=new Collider(	new Sphere(new Vector3(x,y,z-16),16))
+collider=new Collider(new AABB(new Vector3(x,y,z),new Vector3(x+xs,y+ys,z-zs),true))
+probe=new Ray(new Vector3(x,y,z),new Vector3(0,0,1));
+hit_info=new Ray_Hit_Info();
 //shape=new AABB(new Vector3(x,y,z),new Vector3(x+xs,y+ys,z-zs),true)
 
 

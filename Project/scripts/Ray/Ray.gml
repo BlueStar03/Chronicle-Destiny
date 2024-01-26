@@ -11,40 +11,52 @@ function Ray(origin, direction) constructor{
 		return collider.shape.check_ray(self,hit_info,maxt);
 	}
 	
-	static check_point = function(point, hit_info) {
+	static check_point = function(point, hit_info){
 		return point.check_ray(self, hit_info);
-	};
+	}
 
-	static check_sphere = function(sphere, hit_info) {
+	static check_sphere = function(sphere, hit_info){
 		return sphere.check_ray(self, hit_info);
-	};
+	}
 
-	static check_aabb = function(aabb, hit_info) {
+	static check_aabb = function(aabb, hit_info){
 		return aabb.check_ray(self, hit_info);
+	}
+
+	static check_plane = function(plane, hit_info) {
+		return plane.check_ray(self, hit_info);
 	};
 
-	static check_ray = function(ray, hit_info) {
+	static check_ray = function(ray, hit_info){
 		return false;
-	};
+	}
 
-	static check_line = function(line, hit_info) {
+	static check_line = function(line, hit_info){
 		return false;
-	};
+	}
 
-	static nearest_point = function(vec3) {
+	static check_obb = function(obb, hit_info){
+		return obb.check_ray(self, hit_info);
+	}
+
+	static check_capsule = function(capsule, hit_info){
+		return capsule.check_ray(self, hit_info);
+	}
+
+	static nearest_point = function(vec3){
 		var diff = vec3.subtract(self.origin);
 		var t = max(diff.dot(self.direction), 0);
 		var scaled_dir = self.direction.multiply(t);
 		return self.origin.add(scaled_dir);
-	};
+	}
 
-	static get_min = function() {
+	static get_min = function(){
 		return undefined;
-	};
+	}
 
-	static get_max = function() {
+	static get_max = function(){
 		return undefined;
-	};
+	}
 	
 	static dbug_draw = function(col=c_white){
 		//	var s=player.collider.shape.position
@@ -111,20 +123,20 @@ function Ray_Hit_Info() constructor {
 	self.point = undefined;
 	self.distance = infinity;
 	self.normal = undefined;
-    
-	static update = function(distance, shape, point, normal) {
-		if (distance < self.distance) {
+
+	static update = function(distance, shape, point, normal){
+		if (distance < self.distance){
 			self.distance = distance;
 			self.shape = shape;
 			self.point = point;
 			self.normal = normal;
 		}
-	};
-    
-	static clear = function() {
+	}
+
+	static clear = function(){
 		self.shape = undefined;
 		self.point = undefined;
 		self.distance = infinity;
 		self.normal = undefined;
-	};
+	}
 }

@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "objects",
-    "path": "folders/Code/objects.yy",
+    "name": "collider test",
+    "path": "folders/Code/Test/collider test.yy",
   },
   "parentObjectId": {
     "name": "GameObject",

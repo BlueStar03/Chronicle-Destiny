@@ -1,30 +1,35 @@
-function Sphere(x,y,z=undefined,r=undefined)constructor{
-	self.position=x;													//Vect3
-	self.radius=y;														//real
-	if z!=undefined and r!=undefined{
-		self.position=new Vector3(x,y,z);
-		self.radius=r;
-	}
+function Sphere(position, radius) constructor {
+	//PROPERTIES
+	self.position = position;				// Vec3
+	self.radius = radius;					// Vec3
 	
-	static check_collider = function(collider) {
+	//METHODS
+	//Collisions
+	static check_collider = function(collider){
 		return collider.shape.check_sphere(self);
-	};
+	}
 
-	static check_point = function(point) {
+	static check_point = function(point){
 		return point.check_sphere(self);
-	};
+	}
 
-	static check_sphere = function(sphere) {
+	static check_sphere = function(sphere){
 		return self.position.distance_to(sphere.position) < (self.radius + sphere.radius);
-	};
+	}
 
-	static check_aabb = function(aabb) {
+	static check_aabb = function(aabb){
 		var nearest = aabb.nearest_point(self.position);
 		var dist = nearest.distance_to(self.position);
 		return dist < self.radius;
-	};
+	}
 
-	static check_ray = function(ray, hit_info,maxt=infinity) {
+	static check_plane = function(plane){
+		var nearest = plane.nearest_point(self.position);
+		var dist = nearest.distance_to(self.position);
+		return dist < self.radius;
+	}
+
+	static check_ray = function(ray, hit_info,maxt=infinity){
 		var SPtoRO=position.subtract(ray.origin);//vector from the sphere position to the ray origin
 		var RD=ray.direction.normalize();//normalized ray direction
 		var t=SPtoRO.dot(RD);//distance from the ray origin to the point on the ray closest to the sphere position
@@ -53,7 +58,7 @@ function Sphere(x,y,z=undefined,r=undefined)constructor{
 
 		var f = sqrt(abs(offset));
 		var t = EdotD - f;
-		if (mag_squared < r_squared) {
+		if (mag_squared < r_squared){
 			t = EdotD + f;
 		}
 		var contact_point = ray.origin.add(ray.direction.multiply(t));
@@ -62,27 +67,35 @@ function Sphere(x,y,z=undefined,r=undefined)constructor{
 
 		return true;
 		*/
-	};
+	}
 
-	static check_line = function(line) {
+	static check_line = function(line){
 		var nearest = line.nearest_point(self.position);
 		var dist = nearest.distance_to(self.position);
 		return dist < self.radius;
-	};
+	}
 
-	static nearest_point = function(vec3) {
+	static check_obb = function(obb){
+		return obb.check_sphere(self);
+	}
+	
+	static check_capsule = function(capsule){
+		return capsule.check_sphere(self);
+	}
+
+	static nearest_point = function(vec3){
 		var dist = vec3.subtract(self.position).normalize();
 		var scaled_dist = dist.multiply(self.radius);
 		return scaled_dist.add(self.position);
-	};
+	}
 
-	static get_min = function() {
+	static get_min = function(){
 		return self.position.subtract(self.radius);
-	};
+	}
 
-	static get_max = function() {
+	static get_max = function(){
 		return self.position.add(self.radius);
-	};
+	}
 
 	static dbug_draw = function(col=c_white){
 		
@@ -93,7 +106,7 @@ function Sphere(x,y,z=undefined,r=undefined)constructor{
 		var num_vertices = 16; 
 		var angle_increment = 360 / num_vertices;
 		
-		for (var i = 0; i <= num_vertices; i++) {
+		for (var i = 0; i <= num_vertices; i++){
 			var angle_rad = degtorad(i * angle_increment);
 			var vertex_x = 0 + self.radius * cos(angle_rad);
 			var vertex_y = 0 + self.radius * sin(angle_rad);

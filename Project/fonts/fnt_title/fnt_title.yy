@@ -119,8 +119,8 @@
   "lineHeight": 44,
   "maintainGms1Font": false,
   "parent": {
-    "name": "Assets",
-    "path": "folders/Assets.yy",
+    "name": "Font",
+    "path": "folders/Assets/Font.yy",
   },
   "pointRounding": 0,
   "ranges": [

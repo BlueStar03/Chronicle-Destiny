@@ -37,7 +37,7 @@ function Prism(sprite,shadow=-1,num=8)constructor{
 			matrix_set(matrix_world, matrix_build_identity());
 		}
 		if sprite_exists(obj_shadow){
-			draw_3d_sprite(obj_shadow,0,x,y,0-0.1,90,0,0)
+			draw_sprite_3d(obj_shadow,0,x,y,0-0.1,90,0,0)
 		}
 
 	}

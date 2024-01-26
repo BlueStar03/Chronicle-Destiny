@@ -19,6 +19,19 @@ function World()constructor{
                 }
             }	return undefined
 	}
+	static check_ray=function(ray, hit_info){
+		for (var i = 0; i < array_length(self.contents); i++) {
+                if (self.contents[i].check_ray(ray,hit_info)) {
+                    return self.contents[i];
+                }
+            }	return undefined
+	}
+	static place_empty_3d=function(x,y,z,obj=undefined,me=other.id){
+		var ext=me.collider.shape.half_extents
+		var collider =new AABB(new Vector3(x,y,z), new Vector3(ext.x,ext.y,ext.z));
+		var result = check_collider(collider);
+		return false;
+	}
 }
 #region spatial hash code
 /*

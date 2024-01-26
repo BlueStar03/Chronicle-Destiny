@@ -6,28 +6,38 @@ function AABB(point_min, point_max, min_max=true) constructor{
 		self.position=point_min;					//Vect3
 		self.half_extents=point_max;			//Vect3
 	}
-	
-	static check_collider = function(collider) {
+
+	//METHODS
+	//Collisions
+	static check_collider = function(collider){
 		return collider.shape.check_aabb(self);
-	};
+	}
 	
-	static check_point = function(point) {
+	static check_point = function(point){
 		return point.check_aabb(self);
-	};
+	}
 	
-	static check_sphere = function(sphere) {
+	static check_sphere = function(sphere){
 		return sphere.check_aabb(self);
-	};
+	}
 	
-	static check_aabb = function(aabb) {
+	static check_aabb = function(aabb){
 		var box_min = self.get_min();
 		var box_max = self.get_max();
 		var other_min = aabb.get_min();
 		var other_max = aabb.get_max();
 		return ((box_min.x <= other_max.x) && (box_max.x >= other_min.x) && (box_min.y <= other_max.y) && (box_max.y >= other_min.y) && (box_min.z <= other_max.z) && (box_max.z >= other_min.z));
-	};
+	}
 
-	static check_ray = function(ray, hit_info, maxt=infinity) {
+	static check_plane = function(plane){
+		var anorm = plane.normal.absolute();
+		var plength = self.half_extents.dot(anorm);
+		var ndot = plane.normal.dot(self.position);
+		var dist = ndot - plane.distance;
+		return (abs(dist) <= plength);
+	}
+
+	static check_ray = function(ray, hit_info, maxt=infinity){
 		var box_min = self.get_min();
 		var box_max = self.get_max();
 
@@ -57,7 +67,7 @@ function AABB(point_min, point_max, min_max=true) constructor{
 			if (tmin > tmax) return false;
 
 			var t = tmax;
-			if (tmin > 0) {
+			if (tmin > 0){
 				t = tmin;
 			}
 			if t>maxt return false
@@ -74,19 +84,27 @@ function AABB(point_min, point_max, min_max=true) constructor{
 		hit_info.update(t, self, contact_point, tnormal);
 
 		return true;
-	};
+	}
 
-	static check_line = function(line) {
+	static check_line = function(line){
 		var dir = line.finish.subtract(line.start).normalize();
 		var ray = new Ray(line.start, dir);
 		var hit_info = new Ray_Hit_Info();
-		if (self.check_ray(ray, hit_info)) {
+		if (self.check_ray(ray, hit_info)){
 			return (hit_info.distance <= line.length());
 		}
 		return false;
-	};
+	}
 
-	static nearest_point = function(vec3) {
+	static check_obb = function(obb){
+		return obb.check_aabb(self);
+	}
+	
+	static check_capsule = function(capsule){
+		return capsule.check_aabb(self);
+	}
+
+	static nearest_point = function(vec3){
 		var box_min = self.get_min();
 		var box_max = self.get_max();
 		var xx = (vec3.x < box_min.x) ? box_min.x : vec3.x;
@@ -96,17 +114,48 @@ function AABB(point_min, point_max, min_max=true) constructor{
 		yy = (yy > box_max.y) ? box_max.y : yy;
 		zz = (zz > box_max.z) ? box_max.z : zz;
 		return new Vector3(xx, yy, zz);
-	};
+	}
 
-	static get_min = function() {
+	static get_min = function(){
 		return self.position.subtract(self.half_extents);
-	};
+	}
 
-	static get_max = function() {
+	static get_max = function(){
 		return self.position.add(self.half_extents);
-	};
+	}
 
-	static dbug_draw = function(col=c_white) {
+	static get_interval = function(axis){
+		var vertices = self.get_vertices();
+
+		var imin = axis.dot(vertices[0]);
+		var imax = imin;
+
+		for (var i = 1; i < 8; i++) {
+		var dot = axis.dot(vertices[i]);
+		imin = min(imin, dot);
+		imax = max(imax, dot);
+		}
+
+		return new Interval(imin, imax);
+	}
+	
+	static get_vertices = function() {
+        var pmin = self.get_min();
+        var pmax = self.get_max();
+        
+        return [
+            new Vector3(pmin.x, pmax.y, pmax.z),
+            new Vector3(pmin.x, pmax.y, pmin.z),
+            new Vector3(pmin.x, pmin.y, pmax.z),
+            new Vector3(pmin.x, pmin.y, pmin.z),
+            new Vector3(pmax.x, pmax.y, pmax.z),
+            new Vector3(pmax.x, pmax.y, pmin.z),
+            new Vector3(pmax.x, pmin.y, pmax.z),
+            new Vector3(pmax.x, pmin.y, pmin.z),
+        ]
+    }
+
+	static dbug_draw = function(col=c_white){
 
 		var vbuff = vertex_create_buffer();
 		vertex_begin(vbuff, v_format);
@@ -141,6 +190,6 @@ function AABB(point_min, point_max, min_max=true) constructor{
 		vertex_end(vbuff);
 		vertex_submit(vbuff, pr_linelist, -1);
 		vertex_delete_buffer(vbuff);
-	};
+	}
 
 }
