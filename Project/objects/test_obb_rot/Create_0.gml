@@ -7,7 +7,7 @@ zrot=0;
 
 collider=new Collider(new OBB(	new Vector3(x,y,z-ez),
 								new Vector3(ex,ey,ez),
-								new Matrix4(matrix_build(0, 0, 0, 0,0,image_angle, 1, 1, 1)).get_orientation_matrix()
+								new Matrix4(matrix_build(0, 0, 0, 0,0,zrot, 1, 1, 1)).get_orientation_matrix()
 								),
 								self)
 //shape=new AABB(new Vector3(x,y,z-16), new Vector3(16,16,16),false);

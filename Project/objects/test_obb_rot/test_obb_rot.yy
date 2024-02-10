@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "test_capsule",
+  "name": "test_obb_rot",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_test_capsule",
-    "path": "sprites/spr_test_capsule/spr_test_capsule.yy",
+    "name": "spr_test_OBB",
+    "path": "sprites/spr_test_OBB/spr_test_OBB.yy",
   },
   "spriteMaskId": null,
   "visible": true,

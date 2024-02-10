@@ -155,6 +155,30 @@ function AABB(point_min, point_max, min_max=true) constructor{
         ]
     }
 
+
+ 
+    
+    static get_edges = function() {
+        var vertices = self.get_vertices();
+        
+        return [
+            new Line(vertices[0], vertices[1]),
+            new Line(vertices[0], vertices[2]),
+            new Line(vertices[1], vertices[3]),
+            new Line(vertices[2], vertices[3]),
+            new Line(vertices[4], vertices[5]),
+            new Line(vertices[4], vertices[6]),
+            new Line(vertices[5], vertices[7]),
+            new Line(vertices[6], vertices[7]),
+            new Line(vertices[0], vertices[4]),
+            new Line(vertices[1], vertices[5]),
+            new Line(vertices[2], vertices[6]),
+            new Line(vertices[3], vertices[7]),
+        ];
+    };
+ 
+
+
 	static dbug_draw = function(col=c_white){
 
 		var vbuff = vertex_create_buffer();
