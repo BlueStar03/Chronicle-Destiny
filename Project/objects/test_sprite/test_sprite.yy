@@ -9,7 +9,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "draw_test",
-    "path": "folders/Code/Test/draw_test.yy",
+    "path": "folders/Code/objects/Test/draw_test.yy",
   },
   "parentObjectId": {
     "name": "GameObject",

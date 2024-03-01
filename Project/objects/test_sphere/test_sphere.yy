@@ -11,7 +11,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "collider test",
-    "path": "folders/Code/Test/collider test.yy",
+    "path": "folders/Code/objects/Test/collider test.yy",
   },
   "parentObjectId": {
     "name": "GameObject",

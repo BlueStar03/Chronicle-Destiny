@@ -62,77 +62,58 @@ function Capsule(start, finish, radius) constructor {
 	
 	
 	static dbug_draw = function(col=c_white){
-		var vbuff = vertex_create_buffer();
-		vertex_begin(vbuff, v_format);
+		var start=line.start;
+		var finish=line.finish;
+		var dist=finish.subtract(start).magnitude()
+		var normal=finish.subtract(start).normalize();
+		var rot=new Vector3(radtodeg(arcsin(normal.y)),
+							radtodeg(arctan2(normal.x, normal.z)),
+							0)
 		
-		var num_vertices = 12; 
-		var angle_increment = 360 / num_vertices;
-		var vertex_x=0;
-		var vertex_y=0;
-		var vertex_z=0;
+		var V3=0
 		
-		vertex_point_add(vbuff, line.start.x,line.start.y, line.start.z,col);
-		vertex_z=line.start.z
-		for (var i = 0; i <= num_vertices; i++){
-			var angle_rad = degtorad(i * angle_increment);
-			vertex_x = 0 + self.radius * cos(angle_rad)+line.start.x;
-			vertex_y = 0 + self.radius * sin(angle_rad)+line.start.y;
-			vertex_point_add(vbuff, vertex_x,vertex_y, vertex_z,col);
-			vertex_point_add(vbuff, vertex_x,vertex_y, vertex_z,col);
-		}
-		vertex_x=line.start.x
-		for (var i = 0; i <= num_vertices; i++){
-			var angle_rad = degtorad(i * angle_increment);
-			vertex_z = 0 + self.radius * cos(angle_rad)+line.start.z;
-			vertex_y = 0 + self.radius * sin(angle_rad)+line.start.y;
-			vertex_point_add(vbuff, vertex_x,vertex_y, vertex_z,col);
-			vertex_point_add(vbuff, vertex_x,vertex_y, vertex_z,col);
-		}
-		vertex_y=line.start.y
-		for (var i = 0; i <= num_vertices; i++){
-			var angle_rad = degtorad(i * angle_increment);
-			vertex_x = 0 + self.radius * cos(angle_rad)+line.start.x;
-			vertex_z = 0 + self.radius * sin(angle_rad)+line.start.z;
-			vertex_point_add(vbuff, vertex_x,vertex_y, vertex_z,col);
-			vertex_point_add(vbuff, vertex_x,vertex_y, vertex_z,col);
-		}
-		vertex_point_add(vbuff, line.start.x,line.start.y, line.start.z,c_white);
-		
-		vertex_point_add(vbuff, line.start.x,line.start.y, line.start.z,c_white);
-		vertex_point_add(vbuff, line.finish.x,line.finish.y, line.finish.z,c_white);
-		
-		
-		vertex_point_add(vbuff, line.finish.x,line.finish.y, line.finish.z,c_white);
-		//
-		vertex_z=line.finish.z
-		for (var i = 0; i <= num_vertices; i++){
-			var angle_rad = degtorad(i * angle_increment);
-			vertex_x = 0 + self.radius * cos(angle_rad)+line.finish.x;
-			vertex_y = 0 + self.radius * sin(angle_rad)+line.finish.y;
-			vertex_point_add(vbuff, vertex_x,vertex_y, vertex_z,col);
-			vertex_point_add(vbuff, vertex_x,vertex_y, vertex_z,col);
-		}
-		vertex_x=line.finish.x
-		for (var i = 0; i <= num_vertices; i++){
-			var angle_rad = degtorad(i * angle_increment);
-			vertex_z = 0 + self.radius * cos(angle_rad)+line.finish.z;
-			vertex_y = 0 + self.radius * sin(angle_rad)+line.finish.y;
-			vertex_point_add(vbuff, vertex_x,vertex_y, vertex_z,col);
-			vertex_point_add(vbuff, vertex_x,vertex_y, vertex_z,col);
-		}
-		vertex_y=line.finish.y
-		for (var i = 0; i <= num_vertices; i++){
-			var angle_rad = degtorad(i * angle_increment);
-			vertex_x = 0 + self.radius * cos(angle_rad)+line.finish.x;
-			vertex_z = 0 + self.radius * sin(angle_rad)+line.finish.z;
-			vertex_point_add(vbuff, vertex_x,vertex_y, vertex_z,col);
-			vertex_point_add(vbuff, vertex_x,vertex_y, vertex_z,col);
-		}
-		vertex_point_add(vbuff, vertex_x,vertex_y, vertex_z,col);
+		#region axises
+
+				var vbuff = vertex_create_buffer();
+		vertex_begin(vbuff,v_format);
+		vertex_point_add(vbuff, 0,0, dist,c_white);
+		vertex_point_add(vbuff, 0,0, 0,c_white);
 		
 
+		#endregion
+		
+		
+		var seg=8
+		var angle_inc=tau/seg
+		
+	
+		var _col=c_magenta
+		for (var i=0;i<seg+1;i++){			
+			var angle=i*angle_inc;
+			var pos=new Vector3(0+radius*cos(angle),
+								0,
+								-(0+radius*sin(angle)));			
+			if i=0{V3=pos;}
+			if (i<=seg/2){vertex_point_add(vbuff, pos.x,pos.y, pos.z,col);}
+			if (i>=seg/2){vertex_point_add(vbuff, pos.x,pos.y, pos.z+dist,col);}
+			if i>seg-1{vertex_point_add(vbuff, V3.x,V3.y, V3.z,col);}
+		}
+		
+		for (var i=0;i<seg+1;i++){			
+			var angle=i*angle_inc;
+			var pos=new Vector3(0,
+								0+radius*cos(angle),
+								-(0+radius*sin(angle)));			
+			if i=0{V3=pos;}
+			if (i<=seg/2){vertex_point_add(vbuff, pos.x,pos.y, pos.z,col);}
+			if (i>=seg/2){vertex_point_add(vbuff, pos.x,pos.y, pos.z+dist,col);}
+			if i>seg-1{vertex_point_add(vbuff, V3.x,V3.y, V3.z,col);}
+		}
+
 		vertex_end(vbuff);
-		vertex_submit(vbuff, pr_linelist, -1);
+		matrix_set(matrix_world, matrix_build(start.x, start.y, start.z, -rot.x,-rot.y, 0, 1, 1, 1));	
+		vertex_submit(vbuff, pr_linestrip, -1);
+		matrix_set(matrix_world, matrix_build_identity());
 		vertex_delete_buffer(vbuff);
 	}
 }

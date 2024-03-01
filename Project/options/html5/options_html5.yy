@@ -17,7 +17,7 @@
   "option_html5_index": "use_default",
   "option_html5_interpolate_pixels": false,
   "option_html5_jsprepend": "",
-  "option_html5_loadingbar": "Use Default",
+  "option_html5_loadingbar": "use_default",
   "option_html5_localrunalert": true,
   "option_html5_outputdebugtoconsole": true,
   "option_html5_outputname": "index.html",
@@ -28,6 +28,6 @@
   "option_html5_usebuiltinfont": false,
   "option_html5_usebuiltinparticles": false,
   "option_html5_usesplash": false,
-  "option_html5_version": "0.2.0.0",
+  "option_html5_version": "0.3.0.0",
   "option_html5_webgl": 2,
 }

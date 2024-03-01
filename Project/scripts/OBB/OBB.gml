@@ -292,6 +292,14 @@ function OBB(position, size, orientation) constructor {
 		var vert=get_vertices()
 		var vbuff = vertex_create_buffer();
 		vertex_begin(vbuff, v_format);
+		
+		vertex_point_add(vbuff, self.position.x-1, self.position.y , self.position.z ,c_white);
+		vertex_point_add(vbuff, self.position.x+1, self.position.y , self.position.z ,c_white);
+		vertex_point_add(vbuff, self.position.x, self.position.y-1 , self.position.z ,c_white);
+		vertex_point_add(vbuff, self.position.x, self.position.y+1 , self.position.z ,c_white);
+		vertex_point_add(vbuff, self.position.x, self.position.y , self.position.z-1 ,c_white);
+		vertex_point_add(vbuff, self.position.x, self.position.y , self.position.z+1 ,c_white);
+		
 		vertex_point_add(vbuff, vert[1].x , vert[1].y,vert[1].z ,col);
 		vertex_point_add(vbuff, vert[6].x , vert[6].y,vert[6].z ,col);
 		

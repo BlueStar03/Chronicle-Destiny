@@ -183,6 +183,13 @@ function AABB(point_min, point_max, min_max=true) constructor{
 
 		var vbuff = vertex_create_buffer();
 		vertex_begin(vbuff, v_format);
+		
+		vertex_point_add(vbuff, self.position.x-1, self.position.y , self.position.z ,c_white);
+		vertex_point_add(vbuff, self.position.x+1, self.position.y , self.position.z ,c_white);
+		vertex_point_add(vbuff, self.position.x, self.position.y-1 , self.position.z ,c_white);
+		vertex_point_add(vbuff, self.position.x, self.position.y+1 , self.position.z ,c_white);
+		vertex_point_add(vbuff, self.position.x, self.position.y , self.position.z-1 ,c_white);
+		vertex_point_add(vbuff, self.position.x, self.position.y , self.position.z+1 ,c_white);
 
 		vertex_point_add(vbuff, self.position.x - self.half_extents.x, self.position.y - self.half_extents.y, self.position.z - self.half_extents.z,col);
 		vertex_point_add(vbuff, self.position.x - self.half_extents.x, self.position.y - self.half_extents.y, self.position.z + self.half_extents.z,col);

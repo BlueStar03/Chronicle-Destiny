@@ -47,8 +47,8 @@ function Vector3(x=0,y=x,z=x)constructor{
 		return dot_product_3d(x, y, z, vec3.x, vec3.y, vec3.z);	
 	}
 	
-	static cross=function(vec3){
-		return new Vector3(y* vec3.z - vec3.y *vec3.z, z * vec3.x - vec3.z * x, x * vec3.y - vec3.x * y)
+	static cross=function(val){
+		return new Vector3(y* val.z - val.y *z, z * val.x - val.z * x, x * val.y - val.x * y)
 	}
 	
 	static equals =function(vec3) {

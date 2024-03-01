@@ -105,7 +105,7 @@ function Sphere(position, radius) constructor {
 		
 		var num_vertices = 16; 
 		var angle_increment = 360 / num_vertices;
-		
+		vertex_point_add(vbuff, 0, 0, 0,c_white)
 		for (var i = 0; i <= num_vertices; i++){
 			var angle_rad = degtorad(i * angle_increment);
 			var vertex_x = 0 + self.radius * cos(angle_rad);
