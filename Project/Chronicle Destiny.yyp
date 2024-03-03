@@ -22,11 +22,11 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"math","folderPath":"folders/Code/3d Collisions/math.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"shapes","folderPath":"folders/Code/3d Collisions/shapes.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"objects","folderPath":"folders/Code/objects.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"scripts","folderPath":"folders/Code/scripts.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"system","folderPath":"folders/Code/scripts/system.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Test","folderPath":"folders/Code/objects/Test.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"collider test","folderPath":"folders/Code/objects/Test/collider test.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"draw_test","folderPath":"folders/Code/objects/Test/draw_test.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"scripts","folderPath":"folders/Code/scripts.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"system","folderPath":"folders/Code/system.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Rooms","folderPath":"folders/Rooms.yy",},
   ],
   "IncludedFiles": [

@@ -12,9 +12,9 @@ function Vector3(x=0,y=x,z=x)constructor{
 	
 	static add = function(val) {
 		if (is_numeric(val)){
-			return new Vector3(x+val,y+val,z+val);
+			return new Vector3(	x+val,		y+val,		z+val);
 		}
-		return new Vector3(x + val.x, y + val.y, z + val.z);
+		return new Vector3(		x+val.x,	y+val.y,	z+val.z);
 	}
 
 	static subtract = function(val) {
