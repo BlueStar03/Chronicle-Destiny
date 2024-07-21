@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ysy_vector3",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ysy_vector3",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/code/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

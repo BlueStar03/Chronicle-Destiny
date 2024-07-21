@@ -1,0 +1,10 @@
+Nodes:
+======
+0: BaseMesh:
+    * Mesh 0 [V,N,UV,T,]
+
+
+Materials:
+==========
+0: DefaultMaterial
+

@@ -26,3 +26,9 @@ if (place_meeting(x,y+vspd,oWall)){
 //apply movement
 x+=hspd;
 y+=vspd;
+
+
+/// @desc Step event
+var _anim = (hspd!=0 or vspd!=0) ? animWalk : animIdle;
+animationPlayer.change(_anim, true); // true = loop the animation
+animationPlayer.update(delta_time);

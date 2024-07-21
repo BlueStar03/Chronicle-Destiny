@@ -1,0 +1,1 @@
+tmap.room_start()

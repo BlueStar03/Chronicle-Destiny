@@ -1,0 +1,33 @@
+Nodes:
+======
+20: RootNode
+    21: BaseMesh:
+        * Mesh 0 [V,N,UV,T,B,]
+
+    22: RootNode
+        23: Armature
+            0: Root [bone]
+                1: Hip [bone]
+                    2: Thigh_L [bone]
+                        3: Shin_L [bone]
+                            4: Foot_L [bone]
+                    5: Thigh_R [bone]
+                        6: Shin_R [bone]
+                            7: Foot_R [bone]
+                8: Abdomen [bone]
+                    9: Torso [bone]
+                        10: Neck [bone]
+                            11: Head [bone]
+                        12: Shoulder_L [bone]
+                            13: Bicep_L [bone]
+                                14: Arm_L [bone]
+                                    15: Hand_L [bone]
+                        16: Shoulder_R [bone]
+                            17: Bicep_R [bone]
+                                18: Arm_R [bone]
+                                    19: Hand_R [bone]
+
+Materials:
+==========
+0: Material
+
