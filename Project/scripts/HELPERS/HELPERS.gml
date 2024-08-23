@@ -150,3 +150,41 @@ function spherecart(radius, inclination, azimuth) {
     };
 }
 
+/// @function matrix_transform_point(matrix, x, y, z)
+/// @desc Transforms a point using the given transformation matrix.
+/// @param {matrix} matrix - The transformation matrix.
+/// @param {real} x - The x coordinate of the point.
+/// @param {real} y - The y coordinate of the point.
+/// @param {real} z - The z coordinate of the point.
+/// @return {Vector3} The transformed point as a Vector3.
+
+function matrix_transform_point(matrix, x, y, z) {
+    // Extract the components of the matrix
+    var m00 = matrix[ 0];
+    var m01 = matrix[ 1];
+    var m02 = matrix[ 2];
+    var m03 = matrix[ 3];
+    
+    var m10 = matrix[ 4];
+    var m11 = matrix[ 5];
+    var m12 = matrix[ 6];
+    var m13 = matrix[ 7];
+    
+    var m20 = matrix[ 8];
+    var m21 = matrix[ 9];
+    var m22 = matrix[10];
+    var m23 = matrix[11];
+
+    var m30 = matrix[12];
+    var m31 = matrix[13];
+    var m32 = matrix[14];
+    var m33 = matrix[15];
+    
+    // Transform the point
+    var tx = m00 * x + m01 * y + m02 * z + m03;
+    var ty = m10 * x + m11 * y + m12 * z + m13;
+    var tz = m20 * x + m21 * y + m22 * z + m23;
+    
+    // Return the new transformed point as a Vector3
+    return new Vector3(tx, ty, tz);
+}

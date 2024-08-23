@@ -1,6 +1,62 @@
 function Sphere(position, radius) constructor {
     self.position = position;               // Vec3
     self.radius = radius;                   // Vec3
+		
+	static dbug_draw = function(col_center = c_white, col_outline = c_white) {
+	    var vbuff = vertex_create_buffer();
+	    vertex_begin(vbuff, v_format);
+
+	    // Add the center vertex with the center color
+	    vertex_add(vbuff, 0, 0, 0, col_center);
+
+	    var num_vertices = 16; 
+	    var angle_increment = 360 / num_vertices;
+
+	    // Outer vertices of the circle
+	    for (var i = 0; i <= num_vertices; i++) {
+	        var angle_rad = degtorad(i * angle_increment);
+	        var vertex_x = self.radius * cos(angle_rad);
+	        var vertex_y = self.radius * sin(angle_rad);
+	        vertex_add(vbuff, vertex_x, vertex_y, 0, col_outline);
+	    }
+
+	    vertex_end(vbuff);
+
+	    // Calculate the direction vector from the camera to the object
+	    var dir_x = camera.to.x - camera.from.x;
+	    var dir_y = camera.to.y - camera.from.y;
+	    var dir_z = camera.to.z - camera.from.z;
+
+	    // Normalize the direction vector
+	    var dir_length = sqrt(sqr(dir_x) + sqr(dir_y) + sqr(dir_z));
+	    dir_x /= dir_length;
+	    dir_y /= dir_length;
+	    dir_z /= dir_length;
+
+	    // Calculate rotation angles to face the camera
+	    var rot_x = -arctan2(dir_z, sqrt(sqr(dir_x) + sqr(dir_y)));
+	    var rot_y = arctan2(dir_x, dir_y);
+
+	    // Set the transformation matrix so the circle faces the camera
+	    var mat_world = matrix_build(self.position.x, self.position.y, self.position.z, radtodeg(rot_x)+90, 0, radtodeg(rot_y), 1, 1, 1);
+	    matrix_set(matrix_world, mat_world);
+
+	    // Draw the vertices as a line strip
+	    vertex_submit(vbuff, pr_linestrip, -1);
+
+	    // Reset the transformation matrix to identity
+	    matrix_set(matrix_world, matrix_build_identity());
+
+	    // Delete the vertex buffer to free memory
+	    vertex_delete_buffer(vbuff);	
+	}
+		
+}
+
+/*
+function Sphere(position, radius) constructor {
+    self.position = position;               // Vec3
+    self.radius = radius;                   // Vec3
     
     self.property_min = position.Sub(radius);
     self.property_max = position.Add(radius);
@@ -161,25 +217,61 @@ function Sphere(position, radius) constructor {
     };
 		
 		
-	static dbug_draw = function(col=c_white){
-		
-		
-		var vbuff = vertex_create_buffer();
-		vertex_begin(vbuff, v_format);
-		
-		var num_vertices = 16; 
-		var angle_increment = 360 / num_vertices;
-		vertex_add(vbuff, 0, 0, 0,c_white)
-		for (var i = 0; i <= num_vertices; i++){
-			var angle_rad = degtorad(i * angle_increment);
-			var vertex_x = 0 + self.radius * cos(angle_rad);
-			var vertex_y = 0 + self.radius * sin(angle_rad);
-			vertex_add(vbuff, vertex_x, vertex_y, 0,col);
-		}
-		vertex_end(vbuff);
-		matrix_set(matrix_world, matrix_build(self.position.x, self.position.y, self.position.z, -90+0, 0, camera.orbit.dir+90, 1, 1, 1));			
-		vertex_submit(vbuff, pr_linestrip, -1);
-		matrix_set(matrix_world, matrix_build_identity());
-		vertex_delete_buffer(vbuff);	
-	}		
+	static dbug_draw = function(col_center = c_white, col_outline = c_white) {
+	    var vbuff = vertex_create_buffer();
+	    vertex_begin(vbuff, v_format);
+
+	    // Add the center vertex with the center color
+	    vertex_add(vbuff, 0, 0, 0, col_center);
+
+	    var num_vertices = 8; 
+	    var angle_increment = 360 / num_vertices;
+
+	    // Outer vertices of the circle
+	    for (var i = 0; i <= num_vertices; i++) {
+	        var angle_rad = degtorad(i * angle_increment);
+	        var vertex_x = self.radius * cos(angle_rad);
+	        var vertex_y = self.radius * sin(angle_rad);
+	        vertex_add(vbuff, vertex_x, vertex_y, 0, col_outline);
+	    }
+
+	    vertex_end(vbuff);
+
+	    // Calculate the direction vector from the camera to the object
+	    var dir_x = camera.to.x - camera.from.x;
+	    var dir_y = camera.to.y - camera.from.y;
+	    var dir_z = camera.to.z - camera.from.z;
+
+	    // Normalize the direction vector
+	    var dir_length = sqrt(sqr(dir_x) + sqr(dir_y) + sqr(dir_z));
+	    dir_x /= dir_length;
+	    dir_y /= dir_length;
+	    dir_z /= dir_length;
+
+	    // Calculate rotation angles to face the camera
+	    var rot_x = -arctan2(dir_z, sqrt(sqr(dir_x) + sqr(dir_y)));
+	    var rot_y = arctan2(dir_x, dir_y);
+
+	    // Set the transformation matrix so the circle faces the camera
+	    var mat_world = matrix_build(self.position.x, self.position.y, self.position.z, radtodeg(rot_x)+90, 0, radtodeg(rot_y), 1, 1, 1);
+	    matrix_set(matrix_world, mat_world);
+
+	    // Draw the vertices as a line strip
+	    vertex_submit(vbuff, pr_linestrip, -1);
+
+	    // Reset the transformation matrix to identity
+	    matrix_set(matrix_world, matrix_build_identity());
+
+	    // Delete the vertex buffer to free memory
+	    vertex_delete_buffer(vbuff);	
+	}
+
+
+
+
+
+
+
 }
+
+*/

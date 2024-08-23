@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"OBB",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"OBB",
+  "parent":{
+    "name":"col",
+    "path":"folders/CODE/col.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

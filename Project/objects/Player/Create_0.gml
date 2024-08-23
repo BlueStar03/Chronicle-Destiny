@@ -15,9 +15,16 @@ point=new Point(new Vector3(x,y,z))
 
 line=new Line(new Vector3(x,y-10,z-10),new Vector3(x,y+10,z-10))
 
-aabb=new AABB(new Vector3(x,y,z-16),new Vector3(8,8,16))
+aabb=new AABB(new Vector3(x,y,z-16),new Vector3(8,8,16),false)
 
-sphere=new Sphere(new Vector3(x-32,y-32,z-32),8)
+sphere=new Sphere(new Vector3(x-32,y-32,z-8),8)
+
+ray=new Ray(new Vector3(50,50,-16), new Vector3(x,y,z-16))
+
+plane=new Plane(new Vector3(0, 1, 1), 10);
+
+obb = new OBB(new Vector3(200, 200, -16), new Vector3(8, 8, 8), matrix_build(0, 0, 0, 0, 45, 0, 1, 1, 1));
+
 
 
 

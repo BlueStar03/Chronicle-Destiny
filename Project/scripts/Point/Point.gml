@@ -1,4 +1,30 @@
 function Point(position) constructor{
+	self.position=position;				//Vector3
+	
+	static dbug_draw = function(c_point=c_white) {
+		var size=3
+		var vbuff = vertex_create_buffer();
+		
+		vertex_begin(vbuff, v_format);
+	
+		vertex_point_add(vbuff, self.position.x+size,	self.position.y,		self.position.z,			c_point);
+		vertex_point_add(vbuff, self.position.x-size,	self.position.y,		self.position.z,			c_point);
+																				
+		vertex_point_add(vbuff, self.position.x,		self.position.y+size,	self.position.z,			c_point);
+		vertex_point_add(vbuff, self.position.x,		self.position.y-size,	self.position.z,			c_point);
+																				
+		vertex_point_add(vbuff, self.position.x,		self.position.y,		self.position.z+size,		c_point);
+		vertex_point_add(vbuff, self.position.x,		self.position.y,		self.position.z-size,		c_point);
+	
+		vertex_end(vbuff);
+		vertex_submit(vbuff, pr_linelist, -1);
+		vertex_delete_buffer(vbuff);
+	};
+}
+
+
+/*
+function Point(position) constructor{
 	//PROPERTIES
     self.Set(position);
     
@@ -132,17 +158,18 @@ function Point(position) constructor{
 		
 		vertex_begin(vbuff, v_format);
 	
-		vertex_add(vbuff, self.position.x+size,	self.position.y,		self.position.z,			col);
-		vertex_add(vbuff, self.position.x-size,	self.position.y,		self.position.z,			col);
+		vertex_point_add(vbuff, self.position.x+size,	self.position.y,		self.position.z,			col);
+		vertex_point_add(vbuff, self.position.x-size,	self.position.y,		self.position.z,			col);
 																				
-		vertex_add(vbuff, self.position.x,		self.position.y+size,	self.position.z,			col);
-		vertex_add(vbuff, self.position.x,		self.position.y-size,	self.position.z,			col);
+		vertex_point_add(vbuff, self.position.x,		self.position.y+size,	self.position.z,			col);
+		vertex_point_add(vbuff, self.position.x,		self.position.y-size,	self.position.z,			col);
 																				
-		vertex_add(vbuff, self.position.x,		self.position.y,		self.position.z+size,		col);
-		vertex_add(vbuff, self.position.x,		self.position.y,		self.position.z-size,		col);
+		vertex_point_add(vbuff, self.position.x,		self.position.y,		self.position.z+size,		col);
+		vertex_point_add(vbuff, self.position.x,		self.position.y,		self.position.z-size,		col);
 	
 		vertex_end(vbuff);
 		vertex_submit(vbuff, pr_linelist, -1);
 		vertex_delete_buffer(vbuff);
 	};
 }
+*/

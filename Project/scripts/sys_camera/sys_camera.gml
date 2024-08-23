@@ -11,10 +11,11 @@ function Camera() constructor {
 	up = {x:0 ,y:0, z: 1};
 	orbit = {dir: 315,distance: 315,elevation: 30};//DIST384,
 	dir=point_direction(from.x, from.y, to.x, to.y);
+	zoom=3
 
 
 	pro_mat = matrix_build_projection_perspective_fov(60/2, display.get_width() / display.get_height(), 1.0, 32000.0);
-	pro_mat = matrix_build_projection_ortho(display.get_width()/2 , display.get_height()/2, -128,32000);
+	pro_mat = matrix_build_projection_ortho(display.get_width()/zoom , display.get_height()/zoom, -128,32000);
 
 	static snap = true;
 	

@@ -1,4 +1,62 @@
-function AABB(position, half_extents) constructor {
+function AABB(point_min, point_max, min_max=true) constructor{
+	if min_max{
+		self.position = point_min.Add(point_max).Div(2);
+		self.half_extents = point_max.Sub(point_min).Div(2).Abs();
+	}else{
+		self.position=point_min;					//Vect3
+		self.half_extents=point_max;			//Vect3
+	}
+	
+	
+	
+	static dbug_draw = function(col=c_white){
+
+		var vbuff = vertex_create_buffer();
+		vertex_begin(vbuff, v_format);
+		
+		vertex_add(vbuff, self.position.x-1, self.position.y , self.position.z ,c_white);
+		vertex_add(vbuff, self.position.x+1, self.position.y , self.position.z ,c_white);
+		vertex_add(vbuff, self.position.x, self.position.y-1 , self.position.z ,c_white);
+		vertex_add(vbuff, self.position.x, self.position.y+1 , self.position.z ,c_white);
+		vertex_add(vbuff, self.position.x, self.position.y , self.position.z-1 ,c_white);
+		vertex_add(vbuff, self.position.x, self.position.y , self.position.z+1 ,c_white);
+
+		vertex_add(vbuff, self.position.x - self.half_extents.x, self.position.y - self.half_extents.y, self.position.z - self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x - self.half_extents.x, self.position.y - self.half_extents.y, self.position.z + self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x - self.half_extents.x, self.position.y + self.half_extents.y, self.position.z - self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x - self.half_extents.x, self.position.y + self.half_extents.y, self.position.z + self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x + self.half_extents.x, self.position.y - self.half_extents.y, self.position.z - self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x + self.half_extents.x, self.position.y - self.half_extents.y, self.position.z + self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x + self.half_extents.x, self.position.y + self.half_extents.y, self.position.z - self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x + self.half_extents.x, self.position.y + self.half_extents.y, self.position.z + self.half_extents.z,col);
+																													
+		vertex_add(vbuff, self.position.x - self.half_extents.x, self.position.y - self.half_extents.y, self.position.z - self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x + self.half_extents.x, self.position.y - self.half_extents.y, self.position.z - self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x + self.half_extents.x, self.position.y - self.half_extents.y, self.position.z - self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x + self.half_extents.x, self.position.y + self.half_extents.y, self.position.z - self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x + self.half_extents.x, self.position.y + self.half_extents.y, self.position.z - self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x - self.half_extents.x, self.position.y + self.half_extents.y, self.position.z - self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x - self.half_extents.x, self.position.y + self.half_extents.y, self.position.z - self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x - self.half_extents.x, self.position.y - self.half_extents.y, self.position.z - self.half_extents.z,col);
+																															
+		vertex_add(vbuff, self.position.x - self.half_extents.x, self.position.y - self.half_extents.y, self.position.z + self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x + self.half_extents.x, self.position.y - self.half_extents.y, self.position.z + self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x + self.half_extents.x, self.position.y - self.half_extents.y, self.position.z + self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x + self.half_extents.x, self.position.y + self.half_extents.y, self.position.z + self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x + self.half_extents.x, self.position.y + self.half_extents.y, self.position.z + self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x - self.half_extents.x, self.position.y + self.half_extents.y, self.position.z + self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x - self.half_extents.x, self.position.y + self.half_extents.y, self.position.z + self.half_extents.z,col);
+		vertex_add(vbuff, self.position.x - self.half_extents.x, self.position.y - self.half_extents.y, self.position.z + self.half_extents.z,col);
+
+		vertex_end(vbuff);
+		vertex_submit(vbuff, pr_linelist, -1);
+		vertex_delete_buffer(vbuff);
+	}
+	
+}
+
+
+/*function AABB(position, half_extents) constructor {
     self.position = undefined;
     self.half_extents = undefined;
     self.Set(position, half_extents);
@@ -371,4 +429,4 @@ function AABB(position, half_extents) constructor {
 		vertex_submit(vbuff, pr_linelist, -1);
 		vertex_delete_buffer(vbuff);
 	}
-}
+}*/

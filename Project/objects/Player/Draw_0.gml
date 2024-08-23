@@ -18,4 +18,7 @@ point.dbug_draw();
 line.dbug_draw();
 aabb.dbug_draw();
 sphere.dbug_draw();
+ray.dbug_draw();
+plane.dbug_draw();
+obb.dbug_draw();
 

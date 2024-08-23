@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Plane",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Plane",
+  "parent":{
+    "name":"col",
+    "path":"folders/CODE/col.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

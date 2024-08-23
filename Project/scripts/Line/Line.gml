@@ -213,35 +213,48 @@ function Line(start, finish) constructor {
         return self.property_max.Clone();
     };
 		
-	static dbug_draw = function(col=c_white){
-		var size=1
-		var vbuff = vertex_create_buffer();		
-		vertex_begin(vbuff, v_format);
-		
-		vertex_add(vbuff, self.start.x+size,	self.start.y,		self.start.z,			c_white);
-		vertex_add(vbuff, self.start.x-size,	self.start.y,		self.start.z,			c_white);																								
-		vertex_add(vbuff, self.start.x,		self.start.y+size,	self.start.z,			c_white);
-		vertex_add(vbuff, self.start.x,		self.start.y-size,	self.start.z,			c_white);																								
-		vertex_add(vbuff, self.start.x,		self.start.y,		self.start.z+size,		c_white);
-		vertex_add(vbuff, self.start.x,		self.start.y,		self.start.z-size,		c_white);
-		
-		vertex_add(vbuff, self.finish.x+size,	self.finish.y,		self.finish.z,			c_white);
-		vertex_add(vbuff, self.finish.x-size,	self.finish.y,		self.finish.z,			c_white);																								
-		vertex_add(vbuff, self.finish.x,		self.finish.y+size,	self.finish.z,			c_white);
-		vertex_add(vbuff, self.finish.x,		self.finish.y-size,	self.finish.z,			c_white);																								
-		vertex_add(vbuff, self.finish.x,		self.finish.y,		self.finish.z+size,		c_white);
-		vertex_add(vbuff, self.finish.x,		self.finish.y,		self.finish.z-size,		c_white);
-		
-		
-		
-	
-		vertex_add(vbuff, self.start.x,	self.start.y,		self.start.z,			col);
-		vertex_add(vbuff, self.finish.x,	self.finish.y,		self.finish.z,			col);
+static dbug_draw = function(c_line=c_white, size=1, c_ext=c_red) {
+    var vbuff = vertex_create_buffer();        
+    vertex_begin(vbuff, v_format);
+    
+    // Calculate direction vectors for extending the line
+    var dir_x = self.finish.x - self.start.x;
+    var dir_y = self.finish.y - self.start.y;
+    var dir_z = self.finish.z - self.start.z;
+    
+    // Normalize the direction to get the unit vector
+    var magnitude = point_distance_3d(self.start.x, self.start.y, self.start.z, self.finish.x, self.finish.y, self.finish.z);
+    var unit_x = dir_x / magnitude;
+    var unit_y = dir_y / magnitude;
+    var unit_z = dir_z / magnitude;
+    
+    // Extend the start and finish points
+    var ext_start_x = self.start.x - unit_x * size;
+    var ext_start_y = self.start.y - unit_y * size;
+    var ext_start_z = self.start.z - unit_z * size;
+    
+    var ext_finish_x = self.finish.x + unit_x * size;
+    var ext_finish_y = self.finish.y + unit_y * size;
+    var ext_finish_z = self.finish.z + unit_z * size;
+    
+    // Add the vertices to the buffer
+    vertex_point_add(vbuff, ext_start_x, ext_start_y, ext_start_z, c_ext);  // Extended start
+    vertex_point_add(vbuff, self.start.x, self.start.y, self.start.z, c_black);  // Original start
+    
+    vertex_point_add(vbuff, self.start.x, self.start.y, self.start.z, c_line);  // Original start
+    vertex_point_add(vbuff, self.finish.x, self.finish.y, self.finish.z, c_line);  // Original finish
+    
+    vertex_point_add(vbuff, self.finish.x, self.finish.y, self.finish.z, c_black);  // Original finish
+    vertex_point_add(vbuff, ext_finish_x, ext_finish_y, ext_finish_z, c_ext);  // Extended finish
 
-		vertex_end(vbuff);
-		vertex_submit(vbuff, pr_linelist, -1);
-		vertex_delete_buffer(vbuff);
-	}
+    vertex_end(vbuff);
+    vertex_submit(vbuff, pr_linelist, -1);  // Use pr_linelist to draw the vertices as individual line segments
+    vertex_delete_buffer(vbuff);
+}
+
+
+
+
 		
 		
 		
