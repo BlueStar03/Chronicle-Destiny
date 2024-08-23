@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Ray",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Ray",
+  "parent":{
+    "name":"col",
+    "path":"folders/CODE/col.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

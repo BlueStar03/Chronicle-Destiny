@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"sys_display",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/code/Scripts.yy",
+    "name":"System",
+    "path":"folders/CODE/System.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

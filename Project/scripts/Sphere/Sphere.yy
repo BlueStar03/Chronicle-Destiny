@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Sphere",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Sphere",
+  "parent":{
+    "name":"col",
+    "path":"folders/CODE/col.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

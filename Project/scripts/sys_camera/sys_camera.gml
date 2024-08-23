@@ -1,88 +1,93 @@
-function Camera()constructor{
-	mode="none";
-	focus=noone;
-	snap=true;
-	snap_sign=0;
+enum camera_mode {
+	none,
+	orbit
+}
+
+function Camera() constructor {
+	mode = camera_mode.none;
+	focus = noone;
+	from = {x:640/2 ,y:360*2, z: -360/2};
+	to = {x:640/2 ,y:360/2, z: 0};
+	up = {x:0 ,y:0, z: 1};
+	orbit = {dir: 315,distance: 315,elevation: 30};//DIST384,
+	dir=point_direction(from.x, from.y, to.x, to.y);
+
+
+	pro_mat = matrix_build_projection_perspective_fov(60/2, display.get_width() / display.get_height(), 1.0, 32000.0);
+	pro_mat = matrix_build_projection_ortho(display.get_width()/2 , display.get_height()/2, -128,32000);
+
+	static snap = true;
 	
-	from=new Vector3(0,0,-128);
-	to=new Vector3(128,128,0);
-	up=new Vector3(0,0,1);	
-	orbit={
-		dir:270+45,
-		distance:power(2,8)*1.5,
-		elevation:30
+
+	update = function() {
+		switch mode{
+			case camera_mode.none:
+				update_none();break;
+			case camera_mode.orbit:
+				update_orbit();break;
+		}
+		dir=get_direction();
+  };
+	update_none=function(){
+		if (focus==noone){return;}
+		if (instance_exists(focus)) {
+			to.x = focus.x;
+			to.y = focus.y;
+			to.z = focus.z;
+		}else{focus=noone;}
 	}
-	
-	zoom=2
-	//pro_mat=matrix_build_projection_perspective_fov(45/2, display.width/display.height, 1.0, 32000.0);
-	pro_mat=matrix_build_projection_ortho(display.width/zoom,display.height/zoom,-100,3200)
-	
-	//if TILEMODE{
-
-
-	//}
-	
-
-	update=function(){
-		if mode=="orbit"{
-			var rot=input.horizontal_right;
-			orbit.dir+=rot
-			orbit.dir=round(orbit.dir)
-			if snap{
-				if abs(rot)<0.001{
-					var c=orbit.dir;
-					var a=0
-					if (c mod 45 != 0){
-						if(c % 45>22.5){
-							a+=1;
-						}else{
-							a-=1;
-						}
-					orbit.dir+=a;
-					}
-				}
-			}else{
-				if abs(rot)<0.001{
-					if (orbit.dir mod 45 !=0){
-						orbit.dir+=snap_sign
-					}
-				}else{
-					snap_sign=sign(rot);
-				}
+	update_orbit=function(){
+		if (focus==noone){ mode = camera_mode.none; return;}
+		if (instance_exists(focus)) {
+				to.x = focus.x;
+				to.y = focus.y;
+				to.z = focus.z;
+			} else {
+				focus = noone;
+				mode = camera_mode.none;
 			}
-			orbit.dir=rollover(orbit.dir,0,360);
-			if instance_exists(focus){
-				to.x=focus.x;
-				to.y=focus.y;
-				to.z=focus.z;
-			}else{
-				focus=noone;
-				mode="none"
-			}
-			var dist=orbit.distance;
-			var dir=degtorad(-orbit.dir);
-			var ele=degtorad(orbit.elevation+90);
-			from.x=to.x+(dist*sin(ele)*cos(dir));
-			from.y=to.y+(dist*sin(ele)*sin(dir));
-			from.z=to.z+(dist*cos(ele));
+		orbit.dir = rollover(orbit.dir, 0, 360);
+			from.x=to.x+spherecart_x(orbit.distance,degtorad(orbit.elevation+90), degtorad(-orbit.dir));
+			from.y=to.y+spherecart_y(orbit.distance,degtorad(orbit.elevation+90), degtorad(-orbit.dir));
+			from.z=to.z+spherecart_z(orbit.distance,degtorad(orbit.elevation+90), degtorad(-orbit.dir));
+		}
+	rotate_orbit=function(val){
+		static snap_sign = 0;
+		var rot = val;
+		if abs(rot)>0.001{
+			orbit.dir += rot;
 		}else{
-		if instance_exists(focus){
-			var p=8
-			from.x=focus.x-power(2,p);
-			from.y=focus.y+power(2,p);
-			from.z=focus.z-power(2,p);
-			
-			to.x=focus.x;
-			to.y=focus.y;
-			to.z=focus.z;
-		}}
+			if (orbit.dir mod 45 != 0){
+				if snap{
+					if (orbit.dir % 45 > 22.5) {snap_sign = +1;} else {snap_sign = -1;}
+				}
+				orbit.dir += snap_sign;
+			}else{ 
+				snap_sign = sign(rot);
+			}	
+		}
+		orbit.dir = rollover(orbit.dir, 0, 360);
+		orbit.dir = round(orbit.dir);
 	}
+	
+get_direction = function(snap = false) {
+    // Calculate the direction from 'from' to 'to' in the XY plane
+    var dir = point_direction(from.x, from.y, to.x, to.y);
 
-	draw=function(){
-		draw_clear(c_black);//(#6495ed)
-		var cam=camera_get_active();
-		camera_set_view_mat(cam, matrix_build_lookat(from.x,from.y,from.z,to.x,to.y,to.z,up.x,up.y,up.z));
-		camera_set_proj_mat(cam,pro_mat);
+    // If snapping is enabled, round the direction to the nearest 45 degrees
+    if (snap) {
+        dir = round(dir / 45) * 45;
+    }
+
+    return rollover(dir, 0, 360); // Ensure the direction is between 0 and 360 degrees
+};
+
+
+	draw = function() {
+		draw_clear(c_black); // Clear the screen to black
+		var cam = camera_get_active();
+		camera_set_view_mat(cam, matrix_build_lookat(from.x, from.y, from.z, to.x, to.y, to.z, up.x, up.y, up.z));
+		camera_set_proj_mat(cam, pro_mat);
 		camera_apply(cam);
-	}
+	};
 }

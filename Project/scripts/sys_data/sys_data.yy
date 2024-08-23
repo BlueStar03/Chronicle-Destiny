@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sys_data",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sys_data",
+  "parent":{
+    "name":"System",
+    "path":"folders/CODE/System.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

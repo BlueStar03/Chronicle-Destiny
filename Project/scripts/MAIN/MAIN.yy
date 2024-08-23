@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"MAIN",
   "parent":{
-    "name":"code",
-    "path":"folders/code.yy",
+    "name":"System",
+    "path":"folders/CODE/System.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

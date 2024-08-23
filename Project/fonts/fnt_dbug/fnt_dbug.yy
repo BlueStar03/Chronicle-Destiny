@@ -1,7 +1,7 @@
 {
   "$GMFont":"",
   "%Name":"fnt_dbug",
-  "AntiAlias":0,
+  "AntiAlias":1,
   "applyKerning":0,
   "ascender":11,
   "ascenderOffset":0,
@@ -107,7 +107,7 @@
     "124":{"character":124,"h":13,"offset":2,"shift":6,"w":1,"x":52,"y":17,},
     "125":{"character":125,"h":13,"offset":1,"shift":6,"w":4,"x":46,"y":17,},
     "126":{"character":126,"h":13,"offset":1,"shift":6,"w":4,"x":107,"y":62,},
-    "9647":{"character":9647,"h":13,"offset":3,"shift":16,"w":9,"x":113,"y":62,},
+    "9647":{"character":9647,"h":13,"offset":3,"shift":16,"w":10,"x":113,"y":62,},
   },
   "hinting":0,
   "includeTTF":false,
@@ -119,8 +119,8 @@
   "maintainGms1Font":false,
   "name":"fnt_dbug",
   "parent":{
-    "name":"Fonts",
-    "path":"folders/assets/Fonts.yy",
+    "name":"ASSETS",
+    "path":"folders/ASSETS.yy",
   },
   "pointRounding":0,
   "ranges":[

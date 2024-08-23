@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"sh_static",
+  "name":"sh_static",
+  "parent":{
+    "name":"Shaders",
+    "path":"folders/CODE/Shaders.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

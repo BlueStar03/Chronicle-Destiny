@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"AABB",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"AABB",
+  "parent":{
+    "name":"col",
+    "path":"folders/CODE/col.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
