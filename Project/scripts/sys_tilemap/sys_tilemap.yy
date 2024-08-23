@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sys_tilemap",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sys_tilemap",
+  "parent":{
+    "name":"System",
+    "path":"folders/CODE/System.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

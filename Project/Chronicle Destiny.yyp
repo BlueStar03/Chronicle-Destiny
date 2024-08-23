@@ -102,6 +102,7 @@
     {"id":{"name":"sys_display","path":"scripts/sys_display/sys_display.yy",},},
     {"id":{"name":"sys_input","path":"scripts/sys_input/sys_input.yy",},},
     {"id":{"name":"sys_platform","path":"scripts/sys_platform/sys_platform.yy",},},
+    {"id":{"name":"sys_tilemap","path":"scripts/sys_tilemap/sys_tilemap.yy",},},
     {"id":{"name":"Vector","path":"scripts/Vector/Vector.yy",},},
     {"id":{"name":"sh_anim","path":"shaders/sh_anim/sh_anim.yy",},},
     {"id":{"name":"sh_static","path":"shaders/sh_static/sh_static.yy",},},

@@ -13,6 +13,14 @@ function vertex_add(vbuffer,x,y,z,col=c_white,a=1,u=0,v=0,nx=0,ny=0,nz=1){
 	vertex_color(vbuffer,col,a)
 }
 
+function vertex_point_add(buffer,x,y,z,col=c_white,a=1,u=0,v=0,nx=0,ny=0,nz=1 ) {
+	vertex_position_3d(buffer,x,y,z);
+	vertex_normal(buffer,nx,ny,nz);	
+	vertex_texcoord(buffer,u,v);
+	vertex_color(buffer,col,a);
+}
+
+
 
 
 

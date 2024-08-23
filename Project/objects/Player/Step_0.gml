@@ -21,6 +21,9 @@ var cam_dir_rad = degtorad(-camera.dir+90);
 var _rot_hor = _hor * cos(cam_dir_rad) - _ver * sin(cam_dir_rad);
 var _rot_ver = _hor * sin(cam_dir_rad) + _ver * cos(cam_dir_rad);
 
+if input.move.tilt>0{
+dir=point_direction(0,0,_rot_hor,_rot_ver)
+}
 // Apply the movement to the player's position
 x += _rot_hor * mspd;
 y += _rot_ver * mspd;
@@ -48,5 +51,6 @@ camera.rotate_orbit(cr)
 
 dbug.tracker.add("h",input.move.horizontal.current,c_red);
 dbug.tracker.add("v",input.move.vertical.current,c_red);
+dbug.tracker.add("dir",dir);
 dbug.tracker.add("Tilt",input.move.tilt,c_red);
 dbug.tracker.add("A",input.attack.current);

@@ -17,8 +17,8 @@
   },
   "name":"TileSet1",
   "out_columns":16,
-  "out_tilehborder":2,
-  "out_tilevborder":2,
+  "out_tilehborder":0,
+  "out_tilevborder":0,
   "parent":{
     "name":"ASSETS",
     "path":"folders/ASSETS.yy",
