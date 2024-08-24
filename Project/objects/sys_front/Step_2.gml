@@ -1,1 +1,0 @@
-//,camera.get_direction());
