@@ -34,3 +34,5 @@ if (place_meeting(x, y + _vsp, obj_wall)) {
 // Move the player
 x += _hsp;
 y += _vsp;
+
+dir=point_direction(0,0,_hsp,_vsp)

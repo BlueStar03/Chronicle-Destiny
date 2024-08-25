@@ -29,6 +29,7 @@
   },
   "name":"Chronicle Destiny",
   "resources":[
+    {"id":{"name":"fnt_dbug","path":"fonts/fnt_dbug/fnt_dbug.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"sys_front","path":"objects/sys_front/sys_front.yy",},},
@@ -54,9 +55,9 @@
     {"id":{"name":"BBMOD_Vec3","path":"scripts/BBMOD_Vec3/BBMOD_Vec3.yy",},},
     {"id":{"name":"BBMOD_Vec4","path":"scripts/BBMOD_Vec4/BBMOD_Vec4.yy",},},
     {"id":{"name":"BBMOD_VertexFormat","path":"scripts/BBMOD_VertexFormat/BBMOD_VertexFormat.yy",},},
-    {"id":{"name":"Script24","path":"scripts/Script24/Script24.yy",},},
     {"id":{"name":"sys_Input","path":"scripts/sys_Input/sys_Input.yy",},},
     {"id":{"name":"SYSTEM","path":"scripts/SYSTEM/SYSTEM.yy",},},
+    {"id":{"name":"UTILITIES","path":"scripts/UTILITIES/UTILITIES.yy",},},
     {"id":{"name":"bg_grid","path":"sprites/bg_grid/bg_grid.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
