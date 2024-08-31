@@ -1,6 +1,11 @@
 // Get input movement
-var _hsp = input.horizontal*walk_spd;
-var _vsp = input.vertical*walk_spd;
+var _hsp = input.horizontal * walk_spd;
+var _vsp = input.vertical * walk_spd;
+
+// Update the player's direction based on movement input
+if point_distance(0, 0, input.horizontal, input.vertical) > 0 {
+    dir = point_direction(0, 0, _hsp, _vsp);
+}
 
 // Initialize step adjustments
 var _xs = 0;
@@ -30,9 +35,6 @@ if (place_meeting(x, y + _vsp, obj_wall)) {
     _vsp = 0;  // Stop vertical movement
 }
 
-
 // Move the player
 x += _hsp;
 y += _vsp;
-
-dir=point_direction(0,0,_hsp,_vsp)

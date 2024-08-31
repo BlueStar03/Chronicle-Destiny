@@ -1,13 +1,12 @@
-/// @function draw_text_outline(x, y, str, c_str=c_white, c_out=c_black, out=1, q=45)
-/// @description Draws text with an outlined effect.
-/// @param x {Real} The x-coordinate for the text.
-/// @param y {Real} The y-coordinate for the text.
-/// @param str {String} The string to be drawn.
-/// @param c_str {Color} The color of the main text (default is c_white).
-/// @param c_out {Color} The color of the outline (default is c_black).
-/// @param out {Real} The distance of the outline from the text (default is 1).
-/// @param q {Real} The angle increment for drawing the outline (default is 45).
-
+/// @func					draw_text_outline(x, y, str, [c_str=c_white], [c_out=c_black], [out=1], [q=45])
+/// @desc					Draws text with an outlined effect.
+/// @arg	x				{Real}		The x-coordinate for the text.
+/// @arg	y				{Real}		The y-coordinate for the text.
+/// @arg	str			{String}	The string to be drawn.
+/// @arg	[c_str] {Color}		The color of the main text (default is c_white).
+/// @arg	[c_out] {Color}		The color of the outline (default is c_black).
+/// @arg	[out]		{Real}		The distance of the outline from the text (default is 1).
+/// @arg	[q]			{Real}		The angle increment for drawing the outline (default is 45).
 function draw_text_outline(x, y, str, c_str=c_white, c_out=c_black, out=1, q=45) {
     // Save the current drawing color
     var c_temp = draw_get_color();
