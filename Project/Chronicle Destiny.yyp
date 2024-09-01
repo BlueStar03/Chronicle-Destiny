@@ -21,7 +21,10 @@
     {"$GMFolder":"","%Name":"Code","folderPath":"folders/Code.yy","name":"Code","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "IncludedFiles":[],
+  "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"b1x1.bbmod","CopyToMask":-1,"filePath":"datafiles","name":"b1x1.bbmod","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"c1x2.bbmod","CopyToMask":-1,"filePath":"datafiles","name":"c1x2.bbmod","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+  ],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
@@ -59,7 +62,9 @@
     {"id":{"name":"SYSTEM","path":"scripts/SYSTEM/SYSTEM.yy",},},
     {"id":{"name":"UTILITIES","path":"scripts/UTILITIES/UTILITIES.yy",},},
     {"id":{"name":"Vector","path":"scripts/Vector/Vector.yy",},},
+    {"id":{"name":"sh_static","path":"shaders/sh_static/sh_static.yy",},},
     {"id":{"name":"bg_grid","path":"sprites/bg_grid/bg_grid.yy",},},
+    {"id":{"name":"spr_player_uv","path":"sprites/spr_player_uv/spr_player_uv.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
     {"id":{"name":"tl_test_grid","path":"sprites/tl_test_grid/tl_test_grid.yy",},},

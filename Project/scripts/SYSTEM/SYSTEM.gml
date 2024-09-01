@@ -1,10 +1,12 @@
 #macro vMAJOR 0
 #macro vMINOR 1
 #macro vPATCH 0
-#macro vCANARY 2
+#macro vCANARY 3
 #macro VERSION "v" + string(vMAJOR) + "." + string(vMINOR) + "." + string(vPATCH)+ "." +string(vCANARY)
 
 #macro null undefined
+
+#macro BBMOD_MATERIAL_DEFAULT -1
 
 #macro	c_random make_color_rgb(irandom(255),irandom(255),irandom(255))
 #macro c_cornflowerblue #6495ed
