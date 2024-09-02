@@ -2,8 +2,10 @@
 var _hsp = input.horizontal * walk_spd;
 var _vsp = input.vertical * walk_spd;
 
+var _mag=point_distance(0, 0, input.horizontal, input.vertical);
+
 // Update the player's direction based on movement input
-if point_distance(0, 0, input.horizontal, input.vertical) > 0 {
+if _mag > 0 {
     dir = point_direction(0, 0, _hsp, _vsp);
 }
 
@@ -38,3 +40,9 @@ if (place_meeting(x, y + _vsp, obj_wall)) {
 // Move the player
 x += _hsp;
 y += _vsp;
+
+
+
+var _anim = _mag>0 ? animWalk : animIdle;
+animationPlayer.change(_anim, true); // true = loop the animation
+animationPlayer.update(delta_time);

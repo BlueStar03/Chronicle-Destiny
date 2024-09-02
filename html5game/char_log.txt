@@ -1,0 +1,51 @@
+Nodes:
+======
+38: RootNode
+    39: BaseMesh:
+        * Mesh 0 [V,N,UV,T,B,]
+
+    40: RootNode
+        41: BaseRig
+            0: master [bone]
+                1: c_leg.l [bone]
+                2: knee.l [bone]
+                3: c_arm.l [bone]
+                    4: c_finger.l [bone]
+                    5: c_thumb.l [bone]
+                6: hip [bone]
+                    7: thigh.l [bone]
+                        8: shin.l [bone]
+                            9: foot.l [bone]
+                    10: thigh.r [bone]
+                        11: shin.r [bone]
+                            12: foot.r [bone]
+                13: torso [bone]
+                    14: chest [bone]
+                        15: neck [bone]
+                            16: head [bone]
+                        17: shoulder.l [bone]
+                            18: bicep.l [bone]
+                                19: forearm.l [bone]
+                                    20: hand.l [bone]
+                                        21: finger.l [bone]
+                                            22: finger.l.001 [bone]
+                                        23: thumb.l [bone]
+                        24: shoulder.r [bone]
+                            25: bicep.r [bone]
+                                26: forearm.r [bone]
+                                    27: hand.r [bone]
+                                        28: finger.r [bone]
+                                            29: finger.r.001 [bone]
+                                        30: thumb.r [bone]
+                31: c_leg.r [bone]
+                32: knee.r [bone]
+                33: c_arm.r [bone]
+                    34: c_finger.r [bone]
+                    35: c_thumb.r [bone]
+                36: elbow.l [bone]
+                37: elbow.r [bone]
+
+Materials:
+==========
+0: Material.001
+

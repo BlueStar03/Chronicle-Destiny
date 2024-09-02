@@ -1,7 +1,7 @@
 #macro vMAJOR 0
 #macro vMINOR 1
 #macro vPATCH 0
-#macro vCANARY 3
+#macro vCANARY 4
 #macro VERSION "v" + string(vMAJOR) + "." + string(vMINOR) + "." + string(vPATCH)+ "." +string(vCANARY)
 
 #macro null undefined
