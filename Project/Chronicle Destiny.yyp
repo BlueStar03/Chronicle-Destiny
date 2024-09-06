@@ -33,7 +33,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.2.162",
+    "IDEVersion":"2024.8.0.169",
   },
   "name":"Chronicle Destiny",
   "resources":[
@@ -63,6 +63,8 @@
     {"id":{"name":"BBMOD_Vec3","path":"scripts/BBMOD_Vec3/BBMOD_Vec3.yy",},},
     {"id":{"name":"BBMOD_Vec4","path":"scripts/BBMOD_Vec4/BBMOD_Vec4.yy",},},
     {"id":{"name":"BBMOD_VertexFormat","path":"scripts/BBMOD_VertexFormat/BBMOD_VertexFormat.yy",},},
+    {"id":{"name":"Camera","path":"scripts/Camera/Camera.yy",},},
+    {"id":{"name":"Display","path":"scripts/Display/Display.yy",},},
     {"id":{"name":"sys_Input","path":"scripts/sys_Input/sys_Input.yy",},},
     {"id":{"name":"SYSTEM","path":"scripts/SYSTEM/SYSTEM.yy",},},
     {"id":{"name":"UTILITIES","path":"scripts/UTILITIES/UTILITIES.yy",},},

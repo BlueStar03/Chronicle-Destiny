@@ -1,48 +1,53 @@
-// Get input movement
-var _hsp = input.horizontal * walk_spd;
-var _vsp = input.vertical * walk_spd;
+// Get player input
+var _hor = input.horizontal;
+var _ver = input.vertical;
+var _mag = point_distance(0, 0, _hor, _ver);
 
-var _mag=point_distance(0, 0, input.horizontal, input.vertical);
+// Calculate the camera direction in radians
+var cam_dir_rad = degtorad(-camera.dir + 90);
 
-// Update the player's direction based on movement input
+// Rotate the movement vector by the negative of the camera direction
+var _rot_hor = _hor * cos(cam_dir_rad) - _ver * sin(cam_dir_rad);
+var _rot_ver = _hor * sin(cam_dir_rad) + _ver * cos(cam_dir_rad);
+
+// Update player direction if there's movement
 if _mag > 0 {
-    dir = point_direction(0, 0, _hsp, _vsp);
+    dir = point_direction(0, 0, _rot_hor, _rot_ver);
 }
 
-// Initialize step adjustments
-var _xs = 0;
-var _ys = 0;
+// Scale movement by walking speed
+_rot_hor *= walk_spd;
+_rot_ver *= walk_spd;
 
-// Check horizontal collisions
-if (place_meeting(x + _hsp, y, obj_wall)) {
-    _xs = sign(_hsp); // Start with the movement direction
-
-    // Move step by step until just before the collision
-    while (!place_meeting(x + _xs, y, obj_wall) && _hsp != 0) {
+// Handle horizontal movement and collisions
+if (place_meeting(x + _rot_hor, y, obj_wall)) {
+    var _xs = sign(_rot_hor);
+    while (!place_meeting(x + _xs, y, obj_wall) && _rot_hor != 0) {
         x += _xs;
-        _hsp -= sign(_hsp); // Decrease movement amount
+        _rot_hor -= sign(_rot_hor);
     }
-    _hsp = 0;  // Stop horizontal movement
+    _rot_hor = 0;
 }
 
-// Check vertical collisions
-if (place_meeting(x, y + _vsp, obj_wall)) {
-    _ys = sign(_vsp); // Start with the movement direction
-
-    // Move step by step until just before the collision
-    while (!place_meeting(x, y + _ys, obj_wall) && _vsp != 0) {
+// Handle vertical movement and collisions
+if (place_meeting(x, y + _rot_ver, obj_wall)) {
+    var _ys = sign(_rot_ver);
+    while (!place_meeting(x, y + _ys, obj_wall) && _rot_ver != 0) {
         y += _ys;
-        _vsp -= sign(_vsp); // Decrease movement amount
+        _rot_ver -= sign(_rot_ver);
     }
-    _vsp = 0;  // Stop vertical movement
+    _rot_ver = 0;
 }
 
-// Move the player
-x += _hsp;
-y += _vsp;
+// Apply remaining movement
+x += _rot_hor;
+y += _rot_ver;
 
-
-
-var _anim = _mag>0 ? animWalk : animIdle;
-animationPlayer.change(_anim, true); // true = loop the animation
+// Update animation based on movement
+var _anim = (_mag > 0) ? animWalk : animIdle;
+animationPlayer.change(_anim, true); // Loop animation
 animationPlayer.update(delta_time);
+
+// Handle camera rotation with Q and E keys
+var cr = keyboard_check(ord("Q")) - keyboard_check(ord("E"));
+camera.rotate_orbit(cr * 2);

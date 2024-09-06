@@ -19,5 +19,12 @@ gpu_set_texrepeat(true);
 gpu_set_cullmode(cull_noculling);
 
 
+#macro display global.__display
+__display=new Display(); 
+
 #macro input global.___input
 ___input=new Input();
+
+
+#macro camera global.__camera
+__camera=new Camera(); 

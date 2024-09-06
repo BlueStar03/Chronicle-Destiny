@@ -11,3 +11,6 @@ animIdle = new BBMOD_Animation("stand.bbanim");
 animWalk = new BBMOD_Animation("walk.bbanim");
 
 animationPlayer = new BBMOD_AnimationPlayer(model);
+camera.focus=self;
+camera.mode=camera_mode.orbit
+
