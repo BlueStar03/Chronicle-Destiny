@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"SYSTEM",
+  "%Name":"sys_platform",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SYSTEM",
+  "name":"sys_platform",
   "parent":{
-    "name":"Code",
-    "path":"folders/Code.yy",
+    "name":"SYSTEM",
+    "path":"folders/Code/SYSTEM.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

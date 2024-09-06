@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Camera",
+  "%Name":"MAIN",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Camera",
+  "name":"MAIN",
   "parent":{
-    "name":"Code",
-    "path":"folders/Code.yy",
+    "name":"SYSTEM",
+    "path":"folders/Code/SYSTEM.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

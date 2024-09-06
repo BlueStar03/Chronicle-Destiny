@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"sys_input",
+  "%Name":"sys_camera",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"sys_input",
+  "name":"sys_camera",
   "parent":{
     "name":"SYSTEM",
     "path":"folders/Code/SYSTEM.yy",

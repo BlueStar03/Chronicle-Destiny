@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Display",
+  "%Name":"sys_dbug",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Display",
+  "name":"sys_dbug",
   "parent":{
-    "name":"Code",
-    "path":"folders/Code.yy",
+    "name":"SYSTEM",
+    "path":"folders/Code/SYSTEM.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
