@@ -1,11 +1,11 @@
 #macro vMAJOR 0
 #macro vMINOR 1
 #macro vPATCH 0
-#macro vCANARY 6
+#macro vCANARY 7
 #macro VERSION "v" + string(vMAJOR) + "." + string(vMINOR) + "." + string(vPATCH)+ "." +string(vCANARY)
-
+#region initialization
 #macro null undefined
-
+#macro tau pi/2
 #macro BBMOD_MATERIAL_DEFAULT -1
 
 #macro	c_random make_color_rgb(irandom(255),irandom(255),irandom(255))
@@ -17,13 +17,15 @@ gpu_set_alphatestenable(true);
 
 gpu_set_texrepeat(true);
 gpu_set_cullmode(cull_noculling);
+#endregion
+
+#region SYSTEM
 
 #macro data global.__data
-__data=new Data(1); 
+__data=new Data(); 
 
 #macro platform global.__platform
 __platform=new Platform(); 
-
 
 var d_set=data.settings.sys_display
 #macro display global.__display
@@ -40,5 +42,4 @@ var b_set=data.settings.sys_dbug
 #macro dbug global.__dbug
 __dbug=new Dbug(b_set.on,b_set.system,b_set.tracker,b_set.level,b_set.screen,b_set.build,b_set.controls,b_set.touch,b_set.collision); 
 
-
-
+#endregion

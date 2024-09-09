@@ -173,7 +173,9 @@ function Axis(keybind_plus=vk_pageup,keybind_minus=vk_pagedown,gpadbind=gp_axisr
 		update(keyboard_check(bind.keyboard_plus)-keyboard_check(bind.keyboard_minus));
 	}
 	update_gamepad=function(pid=0){
-		update(gamepad_axis_value(pid,bind.gamepad));
+		var i=gamepad_axis_value(pid,bind.gamepad)
+		if abs(i)<0.1{i=0};
+		update(i);
 	}
 	update_touch=function(){
 		update(0);

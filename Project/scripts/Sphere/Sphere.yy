@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Sphere",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Sphere",
+  "parent":{
+    "name":"Collisions",
+    "path":"folders/Code/SYSTEM/Collisions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

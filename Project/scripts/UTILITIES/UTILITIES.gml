@@ -1,3 +1,18 @@
+#macro v_format global.__v_format
+vertex_format_begin();
+vertex_format_add_position_3d();
+vertex_format_add_normal();
+vertex_format_add_texcoord();
+vertex_format_add_color();
+__v_format=vertex_format_end();
+
+function vertex_add(vbuffer,x,y,z,col=c_white,a=1,u=0,v=0,nx=0,ny=0,nz=1){
+	vertex_position_3d(vbuffer,x,y,z);
+	vertex_normal(vbuffer,nx,ny,nz);
+	vertex_texcoord(vbuffer,u,v);
+	vertex_color(vbuffer,col,a)
+}
+
 /// @func					draw_text_outline(x, y, str, [c_str=c_white], [c_out=c_black], [out=1], [q=45])
 /// @desc					Draws text with an outlined effect.
 /// @arg	x				{Real}		The x-coordinate for the text.
