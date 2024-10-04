@@ -28,7 +28,11 @@
   "option_html5_usebuiltinparticles":true,
   "option_html5_usesplash":false,
   "option_html5_use_facebook":false,
+<<<<<<< HEAD
   "option_html5_version":"0.1.0.5",
+=======
+  "option_html5_version":"0.1.0.6",
+>>>>>>> parent of db46130 (collision shapes)
   "option_html5_webgl":2,
   "resourceType":"GMHtml5Options",
   "resourceVersion":"2.0",

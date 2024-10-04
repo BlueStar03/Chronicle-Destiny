@@ -51,3 +51,9 @@ animationPlayer.update(delta_time);
 // Handle camera rotation with Q and E keys
 var cr = keyboard_check(ord("Q")) - keyboard_check(ord("E"));
 camera.rotate_orbit(cr * 2);
+<<<<<<< HEAD
+=======
+dbug.tracker.add("pos","("+string(x)+","+string(y)+","+string(z)+")");
+dbug.tracker.add("dir",dir);
+dbug.tracker.add(keyboard_key)
+>>>>>>> parent of db46130 (collision shapes)

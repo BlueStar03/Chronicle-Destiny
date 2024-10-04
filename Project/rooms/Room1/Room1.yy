@@ -18,6 +18,10 @@
     {"name":"inst_6EB7BADE","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_59E02997","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_2C6FE96","path":"rooms/Room1/Room1.yy",},
+<<<<<<< HEAD
+=======
+    {"name":"inst_280E485E","path":"rooms/Room1/Room1.yy",},
+>>>>>>> parent of db46130 (collision shapes)
   ],
   "isDnd":false,
   "layers":[
