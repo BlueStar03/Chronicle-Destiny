@@ -56,4 +56,14 @@ camera.rotate_orbit(cr * 2);
 dbug.tracker.add("pos","("+string(x)+","+string(y)+","+string(z)+")");
 dbug.tracker.add("dir",dir);
 dbug.tracker.add(keyboard_key)
+<<<<<<< HEAD
 >>>>>>> parent of db46130 (collision shapes)
+=======
+
+aabb.position.X=x;
+aabb.position.Y=y;
+
+X=x;
+Y=y;
+Z=z;
+>>>>>>> parent of d5c9fa5 (collisions wip)

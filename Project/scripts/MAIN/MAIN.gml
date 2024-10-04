@@ -17,6 +17,12 @@ gpu_set_alphatestenable(true);
 
 gpu_set_texrepeat(true);
 gpu_set_cullmode(cull_noculling);
+<<<<<<< HEAD
+=======
+#endregion
+
+#region SYSTEM
+>>>>>>> parent of d5c9fa5 (collisions wip)
 
 #macro data global.__data
 __data=new Data(1); 

@@ -22,7 +22,11 @@
 <<<<<<< HEAD
 =======
     {"$GMFolder":"","%Name":"SYSTEM","folderPath":"folders/Code/SYSTEM.yy","name":"SYSTEM","resourceType":"GMFolder","resourceVersion":"2.0",},
+<<<<<<< HEAD
 >>>>>>> parent of db46130 (collision shapes)
+=======
+    {"$GMFolder":"","%Name":"Collisions","folderPath":"folders/Code/SYSTEM/Collisions.yy","name":"Collisions","resourceType":"GMFolder","resourceVersion":"2.0",},
+>>>>>>> parent of d5c9fa5 (collisions wip)
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
@@ -68,19 +72,33 @@
     {"id":{"name":"BBMOD_Vec4","path":"scripts/BBMOD_Vec4/BBMOD_Vec4.yy",},},
     {"id":{"name":"BBMOD_VertexFormat","path":"scripts/BBMOD_VertexFormat/BBMOD_VertexFormat.yy",},},
 <<<<<<< HEAD
+<<<<<<< HEAD
     {"id":{"name":"Camera","path":"scripts/Camera/Camera.yy",},},
     {"id":{"name":"Display","path":"scripts/Display/Display.yy",},},
     {"id":{"name":"sys_Input","path":"scripts/sys_Input/sys_Input.yy",},},
     {"id":{"name":"SYSTEM","path":"scripts/SYSTEM/SYSTEM.yy",},},
 =======
     {"id":{"name":"MAIN","path":"scripts/MAIN/MAIN.yy",},},
+=======
+    {"id":{"name":"Capsule","path":"scripts/Capsule/Capsule.yy",},},
+    {"id":{"name":"Line","path":"scripts/Line/Line.yy",},},
+    {"id":{"name":"MAIN","path":"scripts/MAIN/MAIN.yy",},},
+    {"id":{"name":"OBB","path":"scripts/OBB/OBB.yy",},},
+    {"id":{"name":"Plane","path":"scripts/Plane/Plane.yy",},},
+    {"id":{"name":"Point","path":"scripts/Point/Point.yy",},},
+    {"id":{"name":"Ray","path":"scripts/Ray/Ray.yy",},},
+    {"id":{"name":"Sphere","path":"scripts/Sphere/Sphere.yy",},},
+>>>>>>> parent of d5c9fa5 (collisions wip)
     {"id":{"name":"sys_camera","path":"scripts/sys_camera/sys_camera.yy",},},
     {"id":{"name":"sys_data","path":"scripts/sys_data/sys_data.yy",},},
     {"id":{"name":"sys_dbug","path":"scripts/sys_dbug/sys_dbug.yy",},},
     {"id":{"name":"sys_display","path":"scripts/sys_display/sys_display.yy",},},
     {"id":{"name":"sys_input","path":"scripts/sys_input/sys_input.yy",},},
     {"id":{"name":"sys_platform","path":"scripts/sys_platform/sys_platform.yy",},},
+<<<<<<< HEAD
 >>>>>>> parent of db46130 (collision shapes)
+=======
+>>>>>>> parent of d5c9fa5 (collisions wip)
     {"id":{"name":"UTILITIES","path":"scripts/UTILITIES/UTILITIES.yy",},},
     {"id":{"name":"Vector","path":"scripts/Vector/Vector.yy",},},
     {"id":{"name":"sh_anim","path":"shaders/sh_anim/sh_anim.yy",},},

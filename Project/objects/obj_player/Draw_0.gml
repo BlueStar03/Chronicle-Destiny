@@ -16,4 +16,10 @@ new BBMOD_Matrix()
 shader_set(sh_anim);
 animationPlayer.submit();
 shader_reset();
+<<<<<<< HEAD
 new BBMOD_Matrix().ApplyWorld();
+=======
+new BBMOD_Matrix().ApplyWorld();
+
+aabb.dbug_draw(c_aqua)
+>>>>>>> parent of d5c9fa5 (collisions wip)

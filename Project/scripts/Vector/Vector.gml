@@ -1,7 +1,13 @@
 function Vector3(x, y = x, z = x) constructor {
+<<<<<<< HEAD
     self.x = x;
     self.y = y;
     self.z = z;
+=======
+    self.X = x;
+    self.Y = y;
+    self.Z = z;
+>>>>>>> parent of d5c9fa5 (collisions wip)
 	
 	static Zero = function() { return new Vector3(0); };
 	static One = function() { return new Vector3(1); };

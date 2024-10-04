@@ -6,9 +6,15 @@ enum camera_mode {
 function Camera() constructor {
 	mode = camera_mode.none;
 	focus = noone;
+<<<<<<< HEAD:Project/scripts/Camera/Camera.gml
 	from = {x:640/2 ,y:360*2, z: -360/2};
 	to = {x:640/2 ,y:360/2, z: 0};
 	up = {x:0 ,y:0, z: 1};
+=======
+	from = new Vector3(640/2 ,360*2, -360/2);
+	to = new Vector3(640/2 ,360/2,  0);
+	up = new Vector3(0 ,0,  1);
+>>>>>>> parent of d5c9fa5 (collisions wip):Project/scripts/sys_camera/sys_camera.gml
 	orbit = {dir: 315,distance: 315,elevation: 30};//DIST384,
 	dir=point_direction(from.x, from.y, to.x, to.y);
 	zoom=2
@@ -19,7 +25,11 @@ function Camera() constructor {
 	//pro_mat = matrix_build_projection_ortho(display.get_width()/zoom , display.get_height()/zoom, -128,32000);
 	
 	pro_mat = matrix_build_projection_perspective_fov(60/2,window_get_width()/window_get_height(),1,32000);
+<<<<<<< HEAD:Project/scripts/Camera/Camera.gml
 	//pro_mat = matrix_build_projection_ortho((display.width*display.s_scale)/zoom , (display.height*display.s_scale)/zoom, -128,32000);
+=======
+	//pro_mat = matrix_build_projection_ortho(display.width/zoom , display.height/zoom, -128,32000);
+>>>>>>> parent of d5c9fa5 (collisions wip):Project/scripts/sys_camera/sys_camera.gml
 
 	static snap = true;
 	
