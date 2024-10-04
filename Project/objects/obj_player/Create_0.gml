@@ -18,4 +18,4 @@ X=0;
 Y=0;
 Z=0;
 
-aabb= new AABB(new Vector3(x,y,-23),new Vector3(8,8,23),false);
+//collider=new ColCollider( new ColAABB(new Vector3(x,y,-23),new Vector3(8,8,23),false),self);

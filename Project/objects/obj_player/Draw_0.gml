@@ -18,4 +18,4 @@ animationPlayer.submit();
 shader_reset();
 new BBMOD_Matrix().ApplyWorld();
 
-aabb.dbug_draw(c_aqua)
+//collider.shape.dbug_draw(c_aqua)

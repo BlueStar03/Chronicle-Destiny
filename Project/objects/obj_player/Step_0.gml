@@ -49,15 +49,16 @@ animationPlayer.change(_anim, true); // Loop animation
 animationPlayer.update(delta_time);
 
 // Handle camera rotation with Q and E keys
-var cr = keyboard_check(ord("Q")) - keyboard_check(ord("E"));
+if input.mode==input_mode.gamepad{var cr = gamepad_axis_value(input.pid,gp_axisrh)}
+else{var cr = keyboard_check(ord("Q")) - keyboard_check(ord("E"));}
 camera.rotate_orbit(cr * 2);
 dbug.tracker.add("pos","("+string(x)+","+string(y)+","+string(z)+")");
 dbug.tracker.add("dir",dir);
 dbug.tracker.add(keyboard_key)
 
-aabb.position.X=x;
-aabb.position.Y=y;
+//collider.shape.position.X=x;
+//collider.shape.position.Y=y;
 
-X=x;
-Y=y;
-Z=z;
+//X=x;
+//Y=y;
+//Z=z;

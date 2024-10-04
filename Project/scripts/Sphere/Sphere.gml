@@ -1,64 +1,121 @@
 function Sphere(position, radius) constructor {
-    self.position = position; // Vec3
-    self.radius = radius;     // Scalar value representing the radius
-    
-    static dbug_draw = function(col_center = c_white, col_outline = c_white) {
-        var vbuff = vertex_create_buffer();
-        vertex_begin(vbuff, v_format);
+	//PROPERTIES
+	self.position = position;				// Vec3
+	self.radius = radius;					// Vec3
+	
+	//METHODS
+	//Collisions
+	static check_collider = function(collider){
+		return collider.shape.check_sphere(self);
+	}
 
-        var num_vertices = 16; 
-        var angle_increment = 360 / num_vertices;
+	static check_point = function(point){
+		return point.check_sphere(self);
+	}
 
-        // Create the transformation matrix to rotate the vertices to face the camera
-        var dir_x = camera.to.X - camera.from.X;
-        var dir_y = camera.to.Y - camera.from.Y;
-        var dir_z = camera.to.Z - camera.from.Z;
-        var dir_length = sqrt(sqr(dir_x) + sqr(dir_y) + sqr(dir_z));
+	static check_sphere = function(sphere){
+		return self.position.distance_to(sphere.position) < (self.radius + sphere.radius);
+	}
 
-        dir_x /= dir_length;
-        dir_y /= dir_length;
-        dir_z /= dir_length;
+	static check_aabb = function(aabb){
+		var nearest = aabb.nearest_point(self.position);
+		var dist = nearest.distance_to(self.position);
+		return dist < self.radius;
+	}
 
-        var rot_x = -arctan2(dir_z, sqrt(sqr(dir_x) + sqr(dir_y)));
-        var rot_y = arctan2(dir_x, dir_y);
+	static check_plane = function(plane){
+		var nearest = plane.nearest_point(self.position);
+		var dist = nearest.distance_to(self.position);
+		return dist < self.radius;
+	}
 
-        var mat_transform = matrix_build(0, 0, 0, radtodeg(rot_x) + 90, 0, radtodeg(rot_y), 1, 1, 1);
+	static check_ray = function(ray, hit_info,maxt=infinity){
+		var SPtoRO=position.subtract(ray.origin);//vector from the sphere position to the ray origin
+		var RD=ray.direction.normalize();//normalized ray direction
+		var t=SPtoRO.dot(RD);//distance from the ray origin to the point on the ray closest to the sphere position
+		if t+radius<0 return false//if t < 0 sphere is behind ray, return false
+		if t>maxt return false// if it is beyond the specified distance, stop and return false 
+		var p=ray.origin.add(RD.multiply(t))// the point on the ray closest to the sphere center		
+		var i=position.subtract(p).magnitude();// distance from p to SO
+		if i>radius return false;// if i is greater than R, there is no collision, retun false
+		var j=sqrt(power(radius,2)-(i*i))//length from P to where it intect the shpere.  Pathagora (A^2 + B^2 = c^2, j^2 + i^2= r^2 )
+		var k=(t-j)// the distance to the entry intesection
+		if k<0{	k=t+j}// if the distence is negative, ther is no entry, ray is inside the sphere, get distance to the exit intersection 
+		
+		var contact_point=ray.origin.add(RD.multiply(k))// point location is from RO, add nornilized RD scaled to k 
+		hit_info.update(k, self, contact_point, contact_point.subtract(self.position).normalize());
+		
+		return true
+	
+		
+		/*
+		var e = self.position.subtract(ray.origin);
+		var mag_squared = power(e.magnitude(), 2);
+		var r_squared = power(self.radius, 2);
+		var EdotD = e.dot(ray.direction);
+		var offset = r_squared - (mag_squared - (EdotD * EdotD));
+		if (offset < 0) return false;
 
-        var prev_x, prev_y, prev_z; // Previous vertex coordinates
+		var f = sqrt(abs(offset));
+		var t = EdotD - f;
+		if (mag_squared < r_squared){
+			t = EdotD + f;
+		}
+		var contact_point = ray.origin.add(ray.direction.multiply(t));
 
-        // Iterate through the circle, duplicating vertices for pr_linelist
-        for (var i = 0; i <= num_vertices; i++) {
-            var angle_rad = degtorad(i * angle_increment);
-            var vertex_x = self.radius * cos(angle_rad);
-            var vertex_y = self.radius * sin(angle_rad);
-            var vertex_z = 0;
+		hit_info.update(t, self, contact_point, contact_point.subtract(self.position).normalize());
 
-            // Apply the transformation to the vertex position
-            var transformed_vertex = matrix_transform_vertex(mat_transform, vertex_x, vertex_y, vertex_z);
+		return true;
+		*/
+	}
 
-            var transformed_x = self.position.X + transformed_vertex[0];
-            var transformed_y = self.position.Y + transformed_vertex[1];
-            var transformed_z = self.position.Z + transformed_vertex[2];
+	static check_line = function(line){
+		var nearest = line.nearest_point(self.position);
+		var dist = nearest.distance_to(self.position);
+		return dist < self.radius;
+	}
 
-            // For the first vertex, we just save it to connect with the next one
-            if (i > 0) {
-                // Add a line segment between the previous and current vertex
-                vertex_add(vbuff, prev_x, prev_y, prev_z, col_outline);
-                vertex_add(vbuff, transformed_x, transformed_y, transformed_z, col_outline);
-            }
+	static check_obb = function(obb){
+		return obb.check_sphere(self);
+	}
+	
+	static check_capsule = function(capsule){
+		return capsule.check_sphere(self);
+	}
 
-            // Save the current vertex for the next iteration
-            prev_x = transformed_x;
-            prev_y = transformed_y;
-            prev_z = transformed_z;
-        }
+	static nearest_point = function(vec3){
+		var dist = vec3.subtract(self.position).normalize();
+		var scaled_dist = dist.multiply(self.radius);
+		return scaled_dist.add(self.position);
+	}
 
-        vertex_end(vbuff);
+	static get_min = function(){
+		return self.position.subtract(self.radius);
+	}
 
-        // Use pr_linelist to draw each pair of vertices as a line segment
-        vertex_submit(vbuff, pr_linelist, -1);
+	static get_max = function(){
+		return self.position.add(self.radius);
+	}
 
-        // Delete the vertex buffer to free memory
-        vertex_delete_buffer(vbuff);
-    };
+	static dbug_draw = function(col=c_white){
+		
+		
+		var vbuff = vertex_create_buffer();
+		vertex_begin(vbuff, v_format);
+		
+		var num_vertices = 16; 
+		var angle_increment = 360 / num_vertices;
+		vertex_add(vbuff, 0, 0, 0,c_white)
+		for (var i = 0; i <= num_vertices; i++){
+			var angle_rad = degtorad(i * angle_increment);
+			var vertex_x = 0 + self.radius * cos(angle_rad);
+			var vertex_y = 0 + self.radius * sin(angle_rad);
+			vertex_add(vbuff, vertex_x, vertex_y, 0,col);
+		}
+		vertex_end(vbuff);
+		matrix_set(matrix_world, matrix_build(self.position.x, self.position.y, self.position.z, -90+0, 0, camera.orbit.dir+90, 1, 1, 1));			
+		vertex_submit(vbuff, pr_linestrip, -1);
+		matrix_set(matrix_world, matrix_build_identity());
+		vertex_delete_buffer(vbuff);	
+	}
 }

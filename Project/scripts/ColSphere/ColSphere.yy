@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Plane",
+  "%Name":"ColSphere",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Plane",
+  "name":"ColSphere",
   "parent":{
     "name":"Collisions",
     "path":"folders/Code/SYSTEM/Collisions.yy",

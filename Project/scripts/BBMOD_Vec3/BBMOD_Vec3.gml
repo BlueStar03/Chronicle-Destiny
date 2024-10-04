@@ -83,6 +83,8 @@ function BBMOD_Vec3(_x=0.0, _y=_x, _z=_x) constructor
 	/// @param {Struct.BBMOD_Vec3} _v The other vector.
 	///
 	/// @return {Struct.BBMOD_Vec3} The created vector.
+
+	
 	static Add = function (_v)
 	{
 		gml_pragma("forceinline");
@@ -1078,6 +1080,8 @@ function BBMOD_Vec3(_x=0.0, _y=_x, _z=_x) constructor
 			Z - _v.Z
 		);
 	};
+	
+
 
 	/// @func SubSelf(_v)
 	///

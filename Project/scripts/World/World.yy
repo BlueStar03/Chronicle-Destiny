@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Point",
+  "%Name":"World",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Point",
+  "name":"World",
   "parent":{
     "name":"collision",
     "path":"folders/Code/SYSTEM/collision.yy",

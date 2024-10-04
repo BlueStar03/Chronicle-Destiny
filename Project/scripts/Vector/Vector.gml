@@ -1,4 +1,4 @@
-function Vector3(x, y = x, z = x) constructor {
+function vVector3(x, y = x, z = x) constructor {
     self.X = x;
     self.Y = y;
     self.Z = z;

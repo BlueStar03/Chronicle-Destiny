@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Point",
+  "%Name":"Vect3",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Point",
+  "name":"Vect3",
   "parent":{
     "name":"collision",
     "path":"folders/Code/SYSTEM/collision.yy",

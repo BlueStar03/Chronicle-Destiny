@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Point",
+  "%Name":"ColRay",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Point",
+  "name":"ColRay",
   "parent":{
-    "name":"collision",
-    "path":"folders/Code/SYSTEM/collision.yy",
+    "name":"Collisions",
+    "path":"folders/Code/SYSTEM/Collisions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

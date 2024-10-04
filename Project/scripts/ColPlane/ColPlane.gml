@@ -1,6 +1,13 @@
-function Plane(normal, distance) constructor {
-	self.normal = normal;					// Vec3
-	self.distance = distance;				// number
+function ColPlane(normal, distance) constructor {
+	self.Set(normal, distance);
+	
+	static Set=function(normal, distance){
+		self.normal = normal;                   // Vec3
+		self.distance = distance;               // number
+    
+		self.property_min = undefined;
+		self.property_max = undefined;
+	}
 
 
 static get_point_on_plane = function() {

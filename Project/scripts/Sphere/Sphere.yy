@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Sphere",
   "parent":{
-    "name":"Collisions",
-    "path":"folders/Code/SYSTEM/Collisions.yy",
+    "name":"collision",
+    "path":"folders/Code/SYSTEM/collision.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

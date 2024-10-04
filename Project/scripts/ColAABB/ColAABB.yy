@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"OBB",
+  "%Name":"ColAABB",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"OBB",
+  "name":"ColAABB",
   "parent":{
     "name":"Collisions",
     "path":"folders/Code/SYSTEM/Collisions.yy",
