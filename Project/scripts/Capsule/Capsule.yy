@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Collider",
+  "%Name":"Capsule",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Collider",
+  "name":"Capsule",
   "parent":{
-    "name":"collision",
-    "path":"folders/Code/SYSTEM/collision.yy",
+    "name":"Collisions",
+    "path":"folders/Code/SYSTEM/Collisions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -6,9 +6,9 @@ enum camera_mode {
 function Camera() constructor {
 	mode = camera_mode.none;
 	focus = noone;
-	from = new BBMOD_Vec3(640/2 ,360*2, -360/2);
-	to = new BBMOD_Vec3(640/2 ,360/2,  0);
-	up = new BBMOD_Vec3(0 ,0,  1);
+	from = new Vector3(640/2 ,360*2, -360/2);
+	to = new Vector3(640/2 ,360/2,  0);
+	up = new Vector3(0 ,0,  1);
 	orbit = {dir: 315,distance: 315,elevation: 30};//DIST384,
 	dir=point_direction(from.X, from.Y, to.X, to.Y);
 	zoom=2
@@ -18,7 +18,7 @@ function Camera() constructor {
 	//pro_mat = matrix_build_projection_ortho(display.get_width()/zoom , display.get_height()/zoom, -128,32000);
 	
 	pro_mat = matrix_build_projection_perspective_fov(60/2,window_get_width()/window_get_height(),1,32000);
-	pro_mat = matrix_build_projection_ortho(display.width/zoom , display.height/zoom, -128,32000);
+	//pro_mat = matrix_build_projection_ortho(display.width/zoom , display.height/zoom, -128,32000);
 
 	static snap = true;
 	
