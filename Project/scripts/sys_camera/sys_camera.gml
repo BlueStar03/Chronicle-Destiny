@@ -6,19 +6,20 @@ enum camera_mode {
 function Camera() constructor {
 	mode = camera_mode.none;
 	focus = noone;
-	from = new Vector3(640/2 ,360*2, -360/2);
-	to = new Vector3(640/2 ,360/2,  0);
-	up = new Vector3(0 ,0,  1);
+	from = {x:640/2 ,y:360*2, z: -360/2};
+	to = {x:640/2 ,y:360/2, z: 0};
+	up = {x:0 ,y:0, z: 1};
 	orbit = {dir: 315,distance: 315,elevation: 30};//DIST384,
-	dir=point_direction(from.X, from.Y, to.X, to.Y);
+	dir=point_direction(from.x, from.y, to.x, to.y);
 	zoom=2
 	
+
 
 	//pro_mat = matrix_build_projection_perspective_fov(60/2, display.get_width() / display.get_height(), 1.0, 32000.0);
 	//pro_mat = matrix_build_projection_ortho(display.get_width()/zoom , display.get_height()/zoom, -128,32000);
 	
 	pro_mat = matrix_build_projection_perspective_fov(60/2,window_get_width()/window_get_height(),1,32000);
-	//pro_mat = matrix_build_projection_ortho(display.width/zoom , display.height/zoom, -128,32000);
+	//pro_mat = matrix_build_projection_ortho((display.width*display.s_scale)/zoom , (display.height*display.s_scale)/zoom, -128,32000);
 
 	static snap = true;
 	
@@ -36,25 +37,25 @@ function Camera() constructor {
 	update_none=function(){
 		if (focus==noone){return;}
 		if (instance_exists(focus)) {
-			to.X = focus.X;
-			to.Y = focus.Y;
-			to.Z = focus.Z;
+			to.x = focus.x;
+			to.y = focus.y;
+			to.z = focus.z;
 		}else{focus=noone;}
 	}
 	update_orbit=function(){
 		if (focus==noone){ mode = camera_mode.none; return;}
 		if (instance_exists(focus)) {
-				to.X = focus.X;
-				to.Y = focus.Y;
-				to.Z = focus.Z;
+				to.x = focus.x;
+				to.y = focus.y;
+				to.z = focus.z;
 			} else {
 				focus = noone;
 				mode = camera_mode.none;
 			}
 		orbit.dir = rollover(orbit.dir, 0, 360);
-			from.X=to.X+spherecart_x(orbit.distance,degtorad(orbit.elevation+90), degtorad(-orbit.dir));
-			from.Y=to.Y+spherecart_y(orbit.distance,degtorad(orbit.elevation+90), degtorad(-orbit.dir));
-			from.Z=to.Z+spherecart_z(orbit.distance,degtorad(orbit.elevation+90), degtorad(-orbit.dir));
+			from.x=to.x+spherecart_x(orbit.distance,degtorad(orbit.elevation+90), degtorad(-orbit.dir));
+			from.y=to.y+spherecart_y(orbit.distance,degtorad(orbit.elevation+90), degtorad(-orbit.dir));
+			from.z=to.z+spherecart_z(orbit.distance,degtorad(orbit.elevation+90), degtorad(-orbit.dir));
 		}
 	rotate_orbit=function(val){
 		static snap_sign = 0;
@@ -77,7 +78,7 @@ function Camera() constructor {
 	
 get_direction = function(snap = false) {
     // Calculate the direction from 'from' to 'to' in the XY plane
-    var dir = point_direction(from.X, from.Y, to.X, to.Y);
+    var dir = point_direction(from.x, from.y, to.x, to.y);
 
     // If snapping is enabled, round the direction to the nearest 45 degrees
     if (snap) {
@@ -91,7 +92,7 @@ get_direction = function(snap = false) {
 	draw = function() {
 		draw_clear(c_cornflowerblue); // Clear the screen to black
 		var cam = camera_get_active();
-		camera_set_view_mat(cam, matrix_build_lookat(from.X, from.Y, from.Z, to.X, to.Y, to.Z, up.X, up.Y, up.Z));
+		camera_set_view_mat(cam, matrix_build_lookat(from.x, from.y, from.z, to.x, to.y, to.z, up.x, up.y, up.z));
 		camera_set_proj_mat(cam, pro_mat);
 		camera_apply(cam);
 	};

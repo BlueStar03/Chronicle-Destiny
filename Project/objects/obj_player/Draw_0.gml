@@ -17,5 +17,3 @@ shader_set(sh_anim);
 animationPlayer.submit();
 shader_reset();
 new BBMOD_Matrix().ApplyWorld();
-
-aabb.dbug_draw(c_aqua)

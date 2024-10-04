@@ -14,8 +14,3 @@ animationPlayer = new BBMOD_AnimationPlayer(model);
 camera.focus=self;
 camera.mode=camera_mode.orbit
 
-X=0;
-Y=0;
-Z=0;
-
-aabb= new AABB(new Vector3(x,y,-23),new Vector3(8,8,23),false);

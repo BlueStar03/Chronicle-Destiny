@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Vector",
   "parent":{
-    "name":"Collisions",
-    "path":"folders/Code/SYSTEM/Collisions.yy",
+    "name":"Code",
+    "path":"folders/Code.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -54,10 +54,3 @@ camera.rotate_orbit(cr * 2);
 dbug.tracker.add("pos","("+string(x)+","+string(y)+","+string(z)+")");
 dbug.tracker.add("dir",dir);
 dbug.tracker.add(keyboard_key)
-
-aabb.position.X=x;
-aabb.position.Y=y;
-
-X=x;
-Y=y;
-Z=z;
