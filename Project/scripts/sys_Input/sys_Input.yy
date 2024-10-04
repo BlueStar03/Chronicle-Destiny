@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"sys_input",
+  "%Name":"sys_Input",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"sys_input",
+  "name":"sys_Input",
   "parent":{
-    "name":"SYSTEM",
-    "path":"folders/Code/SYSTEM.yy",
+    "name":"Code",
+    "path":"folders/Code.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

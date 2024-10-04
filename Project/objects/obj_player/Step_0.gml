@@ -1,6 +1,6 @@
 // Get player input
-var _hor = input.move.horizontal.current;
-var _ver = input.move.vertical.current;
+var _hor = input.horizontal;
+var _ver = input.vertical;
 var _mag = point_distance(0, 0, _hor, _ver);
 
 // Calculate the camera direction in radians
@@ -51,6 +51,3 @@ animationPlayer.update(delta_time);
 // Handle camera rotation with Q and E keys
 var cr = keyboard_check(ord("Q")) - keyboard_check(ord("E"));
 camera.rotate_orbit(cr * 2);
-dbug.tracker.add("pos","("+string(x)+","+string(y)+","+string(z)+")");
-dbug.tracker.add("dir",dir);
-dbug.tracker.add(keyboard_key)
