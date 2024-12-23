@@ -1,2 +1,2 @@
 # Chronicle-Destiny
- An isometri adventure action game.
+ An isometric adventure action game.

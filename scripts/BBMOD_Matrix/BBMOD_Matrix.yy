@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"BBMOD_Matrix",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"BBMOD_Matrix",
+  "parent":{
+    "name":"Math",
+    "path":"folders/BBMOD/Core/Base/Math.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

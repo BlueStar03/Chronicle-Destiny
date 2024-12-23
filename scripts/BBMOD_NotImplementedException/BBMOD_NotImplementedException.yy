@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"BBMOD_NotImplementedException",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"BBMOD_NotImplementedException",
+  "parent":{
+    "name":"Exceptions",
+    "path":"folders/BBMOD/Core/Base/Exceptions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
