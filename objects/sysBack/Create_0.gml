@@ -1,0 +1,1 @@
+tilemap_vb = 0;

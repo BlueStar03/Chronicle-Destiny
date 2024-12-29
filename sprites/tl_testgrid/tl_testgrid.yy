@@ -14,8 +14,8 @@
   "frames":[
     {"$GMSpriteFrame":"","%Name":"adeeb669-1740-429c-b240-94caca8adcce","name":"adeeb669-1740-429c-b240-94caca8adcce","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
-  "gridX":0,
-  "gridY":0,
+  "gridX":8,
+  "gridY":8,
   "height":64,
   "HTile":false,
   "layers":[

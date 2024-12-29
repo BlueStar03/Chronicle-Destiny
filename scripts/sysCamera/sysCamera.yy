@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sysCamera",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sysCamera",
+  "parent":{
+    "name":"Code",
+    "path":"folders/Code.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

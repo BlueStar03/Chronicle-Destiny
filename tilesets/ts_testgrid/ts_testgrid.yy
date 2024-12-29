@@ -29,7 +29,7 @@
     "name":"tl_testgrid",
     "path":"sprites/tl_testgrid/tl_testgrid.yy",
   },
-  "spriteNoExport":false,
+  "spriteNoExport":true,
   "textureGroupId":{
     "name":"Default",
     "path":"texturegroups/Default",

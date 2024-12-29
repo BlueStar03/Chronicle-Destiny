@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"tilemap_to_vertex_buffer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"tilemap_to_vertex_buffer",
+  "parent":{
+    "name":"Code",
+    "path":"folders/Code.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
