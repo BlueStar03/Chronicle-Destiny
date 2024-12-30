@@ -1,6 +1,7 @@
 camera.draw();
 
-if layer_exists("TestTiles"){
-vertex_submit(tilemap_vb, pr_trianglelist, tileset_get_texture(ts_testgrid));
-
+for (var i=0;i<array_length(tilemaps);i++){
+    if tilemaps[i][0]{
+        vertex_submit(tilemaps[i][1], pr_trianglelist, tilemaps[i][2]);
+    }
 }
