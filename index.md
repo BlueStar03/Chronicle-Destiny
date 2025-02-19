@@ -3,16 +3,16 @@
 <p>Your browser doesn't support HTML5 canvas.</p>
 </canvas>
 </div>
-<script type="text/javascript" src="html5game/Chronicle Destiny.js?cachebust=1127810319"></script>
+<script type="text/javascript" src="html5game/Chronicle Destiny.js?cachebust=733182832"></script>
 <script>window.onload = GameMaker_Init;</script>
 
 [Game Design Document](/docs)
 
 ## Controls
 
-| Action | Keyboard |
-|--------|----------|
-| move   | WASD     |
+| Action | Keyboard |               |
+|--------|----------|---------------|
+| move   | WASD     | left joystick |
 
 ---
 

@@ -4,7 +4,7 @@
   "name":"Shader1",
   "parent":{
     "name":"Shaders",
-    "path":"folders/Shaders.yy",
+    "path":"folders/Code/Shaders.yy",
   },
   "resourceType":"GMShader",
   "resourceVersion":"2.0",
