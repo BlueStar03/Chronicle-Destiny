@@ -10,7 +10,7 @@
 
 ## Controls
 
-| Action | Keyboard |               |
+| Action | Keyboard |   GamePad     |
 |--------|----------|---------------|
 | move   | WASD     | left joystick |
 
