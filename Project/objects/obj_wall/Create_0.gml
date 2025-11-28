@@ -1,0 +1,1 @@
+image_zscale = choose(1,3,2)

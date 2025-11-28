@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sys_input",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sys_input",
+  "parent":{
+    "name":"System",
+    "path":"folders/Code/System.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

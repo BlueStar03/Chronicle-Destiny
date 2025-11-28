@@ -1,0 +1,19 @@
+{
+    "single-title": {
+        "front_matter_title":""
+    },
+    "line-length": {
+        "line_length": 3000,
+        "code_blocks": false
+
+    },
+    "ul-style": {
+        "style": "dash"
+    },
+    "no-duplicate-heading": {
+        "siblings_only": true
+    },
+    "no-inline-html": {
+        "allowed_elements": ["br","div","canvas","p","script"]
+    }
+}
