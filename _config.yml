@@ -1,0 +1,12 @@
+title: Chronicle Destiny
+email: zbule@bluestar03.xyz
+description: Development site for an isometric adventure action game 
+logo: logo.svg
+
+# Build settings
+remote_theme: zbule/theme
+plugins:
+  - jekyll-feed
+
+exclude:
+  - project/
