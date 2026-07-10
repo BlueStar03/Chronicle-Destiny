@@ -3,7 +3,7 @@ title: Chronicle Destiny
 ---
 # Chronicle Destiny
 
-## Build 001
+## Build 000
 
 <div class="gm4html5_div_class" id="gm4html5_div_id">
 <canvas id="canvas" width="640" height="360" >
@@ -15,6 +15,4 @@ title: Chronicle Destiny
 
 ## Controls
 
-| Action         | Key/Button          |
-|----------------|---------------------|
-| Movement       | W/A/S/D             |
+- N/A
