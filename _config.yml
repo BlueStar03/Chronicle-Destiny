@@ -1,7 +1,10 @@
+# 
 title: Chronicle Destiny
 email: zbule@bluestar03.xyz
 description: Development site for an isometric adventure action game 
 logo: logo.svg
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 remote_theme: BlueStar03/docs-test
